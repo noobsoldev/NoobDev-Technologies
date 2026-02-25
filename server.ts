@@ -93,6 +93,7 @@ app.get('/api/blog', async (req, res) => {
       };
     });
 
+    console.log(`[API] Returning ${posts.length} posts:`, posts.map(p => p.title).join(', '));
     res.json(posts);
   } catch (error) {
     console.error(error);
@@ -202,12 +203,21 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    // Production static file serving would go here
-    // app.use(express.static('dist'));
+    // Serve static files from dist in production
+    const distPath = path.join(process.cwd(), 'dist');
+    if (fs.existsSync(distPath)) {
+      app.use(express.static(distPath));
+      // Handle SPA routing
+      app.get('*', (req, res, next) => {
+        if (req.path.startsWith('/api')) return next();
+        res.sendFile(path.join(distPath, 'index.html'));
+      });
+    }
   }
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Notion Database ID: ${DATABASE_ID}`);
   });
 }
 

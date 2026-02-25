@@ -317,9 +317,8 @@ export const BlogPost = () => {
     if (!slug) return;
     
     setLoading(true);
-    const url = process.env.NODE_ENV === 'production' 
-      ? `/data/blog/${slug}.json` 
-      : `/api/blog/${slug}`;
+    // Always use the API for live updates, with a cache-buster
+    const url = `/api/blog/${slug}?t=${Date.now()}`;
 
     fetch(url)
       .then(res => {

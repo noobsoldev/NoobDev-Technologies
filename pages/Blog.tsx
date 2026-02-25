@@ -22,9 +22,8 @@ export const Blog = () => {
   const categories = ['All', 'Automation', 'Web Dev', 'Strategy', 'Case Study', 'Education'];
 
   useEffect(() => {
-    const url = process.env.NODE_ENV === 'production' 
-      ? '/data/blog.json' 
-      : '/api/blog';
+    // Always use the API for live updates, with a cache-buster
+    const url = `/api/blog?t=${Date.now()}`;
 
     fetch(url)
       .then(res => res.json())
