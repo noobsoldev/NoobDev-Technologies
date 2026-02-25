@@ -34,10 +34,28 @@ const saveInteractions = (data: any) => {
 app.use(cors());
 app.use(express.json());
 
-// Notion Client
-const notion = new Client({
-  auth: process.env.NOTION_API_KEY
-});
+// Notion API Helper
+async function notionFetch(endpoint: string, method: string = 'GET', body?: any) {
+  const url = `https://api.notion.com/v1/${endpoint}`;
+  const headers = {
+    'Authorization': `Bearer ${process.env.NOTION_API_KEY}`,
+    'Notion-Version': '2022-06-28',
+    'Content-Type': 'application/json'
+  };
+
+  const options: RequestInit = {
+    method,
+    headers,
+    body: body ? JSON.stringify(body) : undefined
+  };
+
+  const res = await fetch(url, options);
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Notion API Error ${res.status}: ${text}`);
+  }
+  return res.json();
+}
 
 const DATABASE_ID = "30df75bf205280eb94bac3b90c6f37d5";
 
@@ -45,8 +63,7 @@ const DATABASE_ID = "30df75bf205280eb94bac3b90c6f37d5";
 app.get('/api/blog', async (req, res) => {
   try {
     // Fetch with filter
-    const response = await (notion.databases as any).query({
-      database_id: DATABASE_ID,
+    const response = await notionFetch(`databases/${DATABASE_ID}/query`, 'POST', {
       filter: {
         property: 'Published',
         checkbox: {
@@ -62,20 +79,6 @@ app.get('/api/blog', async (req, res) => {
     });
 
     console.log(`[Notion] Fetched ${response.results.length} published posts.`);
-
-    if (response.results.length === 0) {
-        // Log full properties of first result if available (which is none here, so maybe log empty)
-        // Or if the user meant "if zero results, log what we got" - but we got nothing.
-        // The request says "If zero, log full properties object." 
-        // This implies debugging why it's zero. 
-        // Let's try to fetch ONE without filter to debug if we get 0 with filter.
-        const debugResponse = await (notion.databases as any).query({ database_id: DATABASE_ID, page_size: 1 });
-        if (debugResponse.results.length > 0) {
-            console.log("[Notion Debug] First row properties:", JSON.stringify((debugResponse.results[0] as any).properties, null, 2));
-        } else {
-            console.log("[Notion Debug] Database is empty.");
-        }
-    }
 
     const posts = response.results.map((page: any) => {
       const props = page.properties;
@@ -106,8 +109,7 @@ app.get('/api/blog/:slug', async (req, res) => {
     const { slug } = req.params;
     
     // 1. Find the page by slug
-    const response = await (notion.databases as any).query({
-      database_id: DATABASE_ID,
+    const response = await notionFetch(`databases/${DATABASE_ID}/query`, 'POST', {
       filter: {
         property: 'Slug',
         rich_text: {
@@ -124,9 +126,7 @@ app.get('/api/blog/:slug', async (req, res) => {
     const pageId = page.id;
 
     // 2. Fetch page content (blocks)
-    const blocksResponse = await notion.blocks.children.list({
-      block_id: pageId,
-    });
+    const blocksResponse = await notionFetch(`blocks/${pageId}/children`, 'GET');
 
     // 3. Construct post object
     const props = page.properties;
