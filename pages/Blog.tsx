@@ -16,32 +16,22 @@ interface BlogPost {
 }
 
 export const Blog = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
   const categories = ['All', 'Automation', 'Web Dev', 'Strategy', 'Case Study', 'Education'];
 
-  useEffect(() => {
-    // Always use the API for live updates, with a cache-buster
-    const url = `/api/blog?t=${Date.now()}`;
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) {
-          setPosts(data);
-        } else {
-          console.error("API returned non-array data:", data);
-          setPosts([]);
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed to fetch posts", err);
-        setPosts([]);
-        setLoading(false);
-      });
-  }, []);
+  // Static list of posts - update this array when adding new HTML files to /public/blog/
+  const posts: BlogPost[] = [
+    {
+      id: '1',
+      title: 'The Future of Business Automation',
+      slug: 'future-of-automation',
+      date: '2024-02-25',
+      category: 'Automation',
+      excerpt: 'How no-code tools and AI are reshaping the landscape of modern business operations.',
+      readTime: '5 min read',
+      image: 'https://picsum.photos/seed/automation/800/400'
+    }
+  ];
 
   const filteredPosts = activeCategory === 'All' 
     ? posts 
@@ -49,14 +39,6 @@ export const Blog = () => {
 
   const featuredPost = filteredPosts[0];
   const regularPosts = filteredPosts.slice(1);
-
-  if (loading) {
-    return (
-      <div className="pt-32 pb-20 bg-white min-h-screen flex justify-center items-center">
-        <div className="animate-pulse font-mono text-[#FF0000]">Loading Blog Data...</div>
-      </div>
-    );
-  }
 
   return (
     <div className="page-transition pt-32 pb-20 bg-white">
@@ -99,9 +81,9 @@ export const Blog = () => {
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <Link to={`/blog/${featuredPost.slug}`} className="text-sm font-bold border-b-2 border-[#FF0000] pb-1 hover:text-[#FF0000] transition-colors">
+                    <a href={`/blog/${featuredPost.slug}.html`} className="text-sm font-bold border-b-2 border-[#FF0000] pb-1 hover:text-[#FF0000] transition-colors">
                       Read the Full Article →
-                    </Link>
+                    </a>
                     <span className="text-gray-400 text-xs font-mono tracking-tighter">[{featuredPost.readTime}]</span>
                   </div>
                 </div>
@@ -160,9 +142,9 @@ export const Blog = () => {
                   <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6">
                     {post.excerpt}
                   </p>
-                  <Link to={`/blog/${post.slug}`} className="text-xs font-bold font-mono uppercase tracking-widest flex items-center group-hover:translate-x-1 transition-transform">
+                  <a href={`/blog/${post.slug}.html`} className="text-xs font-bold font-mono uppercase tracking-widest flex items-center group-hover:translate-x-1 transition-transform">
                     View Post <span className="ml-2 text-[#FF0000]">→</span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </article>
