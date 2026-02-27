@@ -39,6 +39,7 @@ export const Navbar = () => {
     { label: 'Services', value: '/services' },
     { label: 'Showcase', value: '/showcase' },
     { label: 'Blog', value: '/blog' },
+    { label: 'Startup Perks', value: '/perks' },
     { label: 'Contact', value: '/contact' },
   ];
 
@@ -238,9 +239,9 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-gray-900 mb-6 font-mono text-sm underline decoration-[#FF0000]">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About', 'Services', 'Showcase', 'Blog', 'Contact'].map((item) => (
+              {['Home', 'About', 'Services', 'Showcase', 'Blog', 'Startup Perks', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="text-gray-600 hover:text-[#FF0000] text-sm transition-colors">
+                  <Link to={item === 'Home' ? '/' : item === 'Startup Perks' ? '/perks' : `/${item.toLowerCase().replace(' ', '')}`} className="text-gray-600 hover:text-[#FF0000] text-sm transition-colors">
                     {item}
                   </Link>
                 </li>
