@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Page } from '../types';
 
 export const Logo = ({ className = "" }: { className?: string }) => (
-  <div className={`flex items-center font-bold tracking-tight select-none ${className}`}>
+  <div className={`flex items-center font-poppins font-bold tracking-tight select-none ${className}`}>
     <span className="text-black">Noob</span>
     <span className="text-[#FF0000] font-mono mx-0.5">{"{"}</span>
     <span className="text-black">dev</span>
