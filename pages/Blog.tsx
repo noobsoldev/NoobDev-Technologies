@@ -52,7 +52,7 @@ export const Blog = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <BraceWrap>Insights</BraceWrap> & Updates
           </h1>
-          <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
+          <p className="text-xl text-gray-700 max-w-2xl leading-relaxed">
             Deep dives into business automation, no-code architecture, and the future of work.
           </p>
         </div>
@@ -65,7 +65,10 @@ export const Blog = () => {
                 <div className="lg:w-1/2 h-80 lg:h-auto overflow-hidden">
                   <img 
                     src={featuredPost.image} 
-                    alt={featuredPost.title} 
+                    alt={`${featuredPost.title} featured post`} 
+                    width="600"
+                    height="400"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
@@ -77,7 +80,7 @@ export const Blog = () => {
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-[#FF0000] transition-colors">
                     {featuredPost.title}
                   </h2>
-                  <p className="text-gray-600 mb-8 text-lg leading-relaxed line-clamp-3">
+                  <p className="text-gray-700 mb-8 text-lg leading-relaxed line-clamp-3">
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
@@ -117,7 +120,10 @@ export const Blog = () => {
               <div className="relative h-60 mb-8 overflow-hidden bg-gray-100">
                 <img 
                   src={post.image} 
-                  alt={post.title} 
+                  alt={`${post.title} blog post`} 
+                  width="400"
+                  height="240"
+                  loading="lazy"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
                 />
                 <div className="absolute bottom-0 left-0 bg-white px-4 py-2 font-mono text-[10px] font-bold text-[#FF0000] border-t border-r border-gray-100">

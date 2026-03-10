@@ -44,7 +44,7 @@ export const Contact = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Let's <BraceWrap>Build</BraceWrap> Something</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Ready to automate your workflows? Send us a message and we'll get back to you within 24 hours.</p>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Ready to automate your workflows? Send us a message and we'll get back to you within 24 hours.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">
@@ -150,7 +150,7 @@ export const Contact = () => {
 
               <div>
                 <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Need urgent automation help?</h4>
-                <p className="text-gray-600 mb-4">Connect instantly on WhatsApp for quick discussions, audits, or urgent automation needs.</p>
+                <p className="text-gray-700 mb-4">Connect instantly on WhatsApp for quick discussions, audits, or urgent automation needs.</p>
                 <a 
                   href="https://wa.me/919717358684" 
                   target="_blank" 
@@ -171,7 +171,7 @@ export const Contact = () => {
                     <h5 className="font-bold mb-2 flex items-center">
                       <span className="text-[#FF0000] mr-2">{"{"}?{"}"}</span> {faq.q}
                     </h5>
-                    <p className="text-gray-600 text-sm leading-relaxed pl-6">{faq.a}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed pl-6">{faq.a}</p>
                   </div>
                 ))}
               </div>

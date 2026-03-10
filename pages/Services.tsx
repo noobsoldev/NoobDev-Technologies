@@ -11,7 +11,7 @@ export const Services = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Our <BraceWrap>Expertise</BraceWrap></h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">From AI workflows to custom web development, we provide the technical foundation your business needs to scale without the friction of traditional coding.</p>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">From AI workflows to custom web development, we provide the technical foundation your business needs to scale without the friction of traditional coding.</p>
         </div>
 
         {/* Services Hub */}
@@ -47,7 +47,7 @@ export const Services = () => {
                     <h4 className="font-bold mb-4 text-sm font-mono text-gray-400">KEY FEATURES:</h4>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {s.features.map(f => (
-                        <li key={f} className="flex items-center text-gray-600 text-sm">
+                        <li key={f} className="flex items-center text-gray-700 text-sm">
                           <span className="text-[#FF0000] mr-2 font-mono">{"{"}✔{"}"}</span> {f}
                         </li>
                       ))}

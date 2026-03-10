@@ -72,14 +72,7 @@ export const SERVICES: Service[] = [
   }
 ];
 
-export const PROJECTS: Project[] = [
-  { id: 1, title: 'E-commerce Automation', category: 'Automation', industry: 'Retail', metric: '50% time saved', image: 'https://images.unsplash.com/photo-1518433278983-911a3c727571?auto=format&fit=crop&q=80&w=600&h=400' },
-  { id: 2, title: 'SaaS Landing Page', category: 'Web Dev', industry: 'Tech Startup', metric: '3x conversions', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600&h=400' },
-  { id: 3, title: 'CRM Integration', category: 'CRM', industry: 'Agency', metric: 'Zero lost leads', image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600&h=400' },
-  { id: 4, title: 'SEO Overhaul', category: 'SEO', industry: 'Local Business', metric: '+140% traffic', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=400' },
-  { id: 5, title: 'Multi-platform Automation', category: 'Automation', industry: 'Consulting', metric: '15h saved/week', image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600&h=400' },
-  { id: 6, title: 'Custom Portal', category: 'Web Dev', industry: 'Healthcare', metric: '40% faster ops', image: 'https://images.unsplash.com/photo-1551288049-bbbda5366991?auto=format&fit=crop&q=80&w=600&h=400' }
-];
+export const PROJECTS: Project[] = [];
 
 export const BLOG_POSTS: BlogPost[] = [
   { id: 1, title: '5 Business Processes to Automate First', category: 'Strategy', date: 'Oct 12, 2025', excerpt: 'Discover the low-hanging fruit in your business that can be automated today.', readTime: '5 min', image: 'https://picsum.photos/seed/b1/600/400' },

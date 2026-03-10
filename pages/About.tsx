@@ -9,13 +9,13 @@ export const About = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">About <BraceWrap>Noobdev</BraceWrap></h1>
-          <p className="text-xl text-gray-600 font-mono italic underline decoration-[#FF0000] decoration-2 underline-offset-8">Making automation accessible to everyone</p>
+          <p className="text-xl text-gray-700 font-mono italic underline decoration-[#FF0000] decoration-2 underline-offset-8">Making automation accessible to everyone</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-            <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
+            <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
               <p>
                 We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noobdev was built to democratize high-end business automation for companies of all sizes.
               </p>
@@ -56,7 +56,7 @@ console.log(ourMission().goal);
               <div className="text-2xl font-bold mb-4">
                 <BraceWrap>{v.title}</BraceWrap>
               </div>
-              <p className="text-gray-600 leading-relaxed">{v.desc}</p>
+              <p className="text-gray-700 leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>

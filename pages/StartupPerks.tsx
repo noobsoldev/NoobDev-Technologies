@@ -453,8 +453,8 @@ export const StartupPerks = () => {
         {/* Header Section */}
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Startup <BraceWrap>Perks</BraceWrap></h1>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Free Credits & Discounts for Startups</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Free Credits & Discounts for Startups</h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-10">
             Discover over $1.5M in free cloud credits, AI API access, developer tools, and startup programs — all in one place.
           </p>
 
@@ -513,7 +513,7 @@ export const StartupPerks = () => {
                 <div className="text-xl font-bold text-black">{perk.value}</div>
               </div>
               
-              <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow line-clamp-2">
+              <p className="text-gray-700 text-sm leading-relaxed mb-8 flex-grow line-clamp-2">
                 {perk.description}
               </p>
               

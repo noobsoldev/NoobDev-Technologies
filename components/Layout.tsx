@@ -62,7 +62,7 @@ export const Navbar = () => {
               key={link.value}
               to={link.value}
               className={`text-sm font-medium transition-colors hover:text-[#FF0000] ${
-                isActive(link.value) ? 'text-[#FF0000] border-b-2 border-[#FF0000]' : 'text-gray-600'
+                isActive(link.value) ? 'text-[#FF0000] border-b-2 border-[#FF0000]' : 'text-gray-700'
               }`}
             >
               {link.label}
@@ -232,7 +232,7 @@ export const Footer = () => {
             <Logo className="text-xl mb-4" />
             <p className="text-sm font-bold text-black mb-1">NO-CODE AUTOMATION STUDIO</p>
             <p className="text-xs text-gray-500 font-mono mb-4">estd 2025</p>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed">
               Democratizing automation for businesses worldwide. Built by developers, designed for everyone.
             </p>
           </div>
@@ -241,7 +241,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {['Home', 'About', 'Services', 'Showcase', 'Blog', 'Startup Perks', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link to={item === 'Home' ? '/' : item === 'Startup Perks' ? '/perks' : `/${item.toLowerCase().replace(' ', '')}`} className="text-gray-600 hover:text-[#FF0000] text-sm transition-colors">
+                  <Link to={item === 'Home' ? '/' : item === 'Startup Perks' ? '/perks' : `/${item.toLowerCase().replace(' ', '')}`} className="text-gray-700 hover:text-[#FF0000] text-sm transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -253,7 +253,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {['AI Automation', 'Web Development', 'SEO Services', 'CRM Solutions'].map((item) => (
                 <li key={item}>
-                  <Link to="/services" className="text-gray-600 hover:text-[#FF0000] text-sm transition-colors">
+                  <Link to="/services" className="text-gray-700 hover:text-[#FF0000] text-sm transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -267,7 +267,7 @@ export const Footer = () => {
                 <p className="text-sm text-gray-900 font-bold">Thanks for subscribing! You’ll hear from us soon 🚀</p>
               ) : (
                 <>
-                  <p className="text-sm text-gray-600 mb-4 font-mono leading-tight">Subscribe for automation insights, case studies & growth hacks:</p>
+                  <p className="text-sm text-gray-700 mb-4 font-mono leading-tight">Subscribe for automation insights, case studies & growth hacks:</p>
                   <form onSubmit={handleNewsletterSubmit} className="flex w-full">
                     <input 
                       required

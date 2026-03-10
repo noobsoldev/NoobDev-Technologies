@@ -1,15 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
-import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { Services } from './pages/Services';
-import { Showcase } from './pages/Showcase';
-import { Blog } from './pages/Blog';
-import { BlogPost } from './pages/BlogPost';
-import { StartupPerks } from './pages/StartupPerks';
-import { Contact } from './pages/Contact';
+
+// Lazy load pages for code splitting
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
+const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
+const Services = lazy(() => import('./pages/Services').then(module => ({ default: module.Services })));
+const Showcase = lazy(() => import('./pages/Showcase').then(module => ({ default: module.Showcase })));
+const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
+const BlogPost = lazy(() => import('./pages/BlogPost').then(module => ({ default: module.BlogPost })));
+const StartupPerks = lazy(() => import('./pages/StartupPerks').then(module => ({ default: module.StartupPerks })));
+const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -21,12 +23,20 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Minimal loading fallback
+const PageLoader = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-[#FF0000] border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
+
 const AppContent = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Loading simulation
-    const timer = setTimeout(() => setIsLoading(false), 1200);
+    // Reduced loading simulation to 300ms for better perceived performance
+    // or remove entirely if not needed for branding.
+    const timer = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timer);
   }, []);
 
@@ -50,17 +60,19 @@ const AppContent = () => {
       <ScrollToTop />
       
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/showcase" element={<Showcase />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/perks" element={<StartupPerks />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/showcase" element={<Showcase />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/perks" element={<StartupPerks />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <Footer />

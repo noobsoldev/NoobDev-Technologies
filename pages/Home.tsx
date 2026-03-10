@@ -59,7 +59,7 @@ export const Home = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
               <BraceWrap>Automate</BraceWrap> Your Business Without Writing Code
             </h1>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+            <p className="text-xl text-gray-700 mb-10 leading-relaxed max-w-xl">
               The no-code automation studio that connects your apps, automates workflows, and scales your operations — all without a single line of code.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -114,7 +114,14 @@ studio.deploy({
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 group"
               >
-                <img src={partner.logo} alt={partner.name} className="h-6 md:h-8 w-auto object-contain" />
+                <img 
+                  src={partner.logo} 
+                  alt={`${partner.name} logo`} 
+                  width="120" 
+                  height="32" 
+                  loading="lazy"
+                  className="h-6 md:h-8 w-auto object-contain" 
+                />
                 <span className="text-sm font-bold font-mono text-gray-900 group-hover:text-black">{partner.name}</span>
               </a>
             ))}
@@ -149,7 +156,7 @@ studio.deploy({
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
               <h2 className="text-4xl font-bold mb-4">Our <BraceWrap>Services</BraceWrap></h2>
-              <p className="text-gray-600 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy.</p>
+              <p className="text-gray-700 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy.</p>
             </div>
             <Link 
                 to="/services"
@@ -161,10 +168,10 @@ studio.deploy({
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SERVICES.map((s, idx) => (
-              <div key={s.id} className={`bg-white p-8 border border-gray-100 hover:border-[#FF0000] hover:shadow-xl transition-all group ${idx >= 6 ? 'md:hidden lg:block' : ''}`}>
-                <div className="text-2xl font-mono text-[#FF0000] mb-6 group-hover:scale-110 transition-transform origin-left">{s.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{s.title}</h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{s.description}</p>
+                <div key={s.id} className={`bg-white p-8 border border-gray-100 hover:border-[#FF0000] hover:shadow-xl transition-all group ${idx >= 6 ? 'md:hidden lg:block' : ''}`}>
+                  <div className="text-2xl font-mono text-[#FF0000] mb-6 group-hover:scale-110 transition-transform origin-left">{s.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{s.title}</h3>
+                  <p className="text-gray-700 text-sm mb-6 leading-relaxed">{s.description}</p>
                 <Link 
                     to="/services"
                     className="text-xs font-bold font-mono uppercase tracking-widest text-gray-400 group-hover:text-[#FF0000] transition-colors"
@@ -199,7 +206,7 @@ studio.deploy({
                   <h3 className="text-2xl font-bold mb-4 mt-4">
                     <BraceWrap className="text-lg">{item.title}</BraceWrap>
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -237,7 +244,7 @@ studio.deploy({
           <h2 className="text-3xl font-bold mb-6">
             <BraceWrap>Subscribe</BraceWrap> to Weekly Automation Tips
           </h2>
-          <p className="text-gray-600 mb-10">Join 5,000+ forward-thinking business owners getting expert tips every Tuesday.</p>
+          <p className="text-gray-700 mb-10">Join 5,000+ forward-thinking business owners getting expert tips every Tuesday.</p>
           
           {newsletterState === 'success' ? (
             <div className="bg-green-50 border border-green-200 rounded-lg p-8 max-w-lg mx-auto">
