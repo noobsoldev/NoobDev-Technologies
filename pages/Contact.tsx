@@ -152,7 +152,7 @@ export const Contact = () => {
                 <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Need urgent automation help?</h4>
                 <p className="text-gray-700 mb-4">Connect instantly on WhatsApp for quick discussions, audits, or urgent automation needs.</p>
                 <a 
-                  href="https://wa.me/919717358684" 
+                  href="https://wa.me/919810141789" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block bg-[#25D366] text-white px-6 py-3 font-bold rounded-lg hover:bg-[#128C7E] transition-colors mb-2"
