@@ -33,33 +33,65 @@ export const Showcase = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {filteredProjects.length > 0 ? (
             filteredProjects.map(project => (
-              <div key={project.id} className="group bg-white border border-gray-100 overflow-hidden hover:shadow-2xl transition-all">
-                <div className="relative h-64 overflow-hidden">
+              <div key={project.id} className="group relative bg-white border border-gray-200 hover:border-black transition-all duration-500 overflow-hidden flex flex-col">
+                {/* Browser Mockup Header */}
+                <div className="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                  <div className="ml-4 text-[10px] font-mono text-gray-400 truncate">
+                    {project.link?.replace('https://', '').replace('/', '')}
+                  </div>
+                </div>
+                
+                {/* Image Section */}
+                <div className="relative aspect-video overflow-hidden bg-gray-50 border-b border-gray-100">
                   <img 
                     src={project.image} 
                     alt={`${project.title} project showcase`} 
-                    width="400"
-                    height="256"
+                    width="600"
+                    height="400"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-full object-cover object-top group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700" 
                   />
-                  <div className="absolute top-4 left-4 bg-white px-3 py-1 text-[10px] font-mono font-bold text-[#FF0000] border border-[#FF0000]">
-                    {project.category.toUpperCase()}
-                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
                 </div>
-                <div className="p-8">
-                  <div className="text-xs font-mono text-gray-400 mb-2 uppercase tracking-widest">{project.industry}</div>
-                  <h3 className="text-xl font-bold mb-4">{project.title}</h3>
-                  <div className="bg-gray-50 p-4 border-l-4 border-[#FF0000] mb-6">
-                      <div className="text-xs font-mono text-gray-500 mb-1">KEY METRIC</div>
-                      <div className="text-lg font-bold text-black">{project.metric}</div>
+
+                {/* Content Section */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="text-xs font-mono text-[#FF0000] mb-2 uppercase tracking-widest">
+                        [ {project.industry} // {project.category} ]
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#FF0000] transition-colors">
+                        {project.title}
+                      </h3>
+                    </div>
                   </div>
-                  <button className="text-sm font-bold hover:text-[#FF0000] transition-colors flex items-center">
-                      View Details <span className="ml-2">→</span>
-                  </button>
+                  
+                  <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                    <div>
+                      <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider mb-1">Key Result</div>
+                      <div className="font-bold text-gray-900">{project.metric}</div>
+                    </div>
+                    {project.link && (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white group-hover:bg-[#FF0000] transition-colors shadow-md"
+                        aria-label={`Visit ${project.title}`}
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))

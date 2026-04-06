@@ -20,6 +20,7 @@ export interface Project {
   industry: string;
   metric: string;
   image: string;
+  link?: string;
 }
 
 export interface BlogPost {

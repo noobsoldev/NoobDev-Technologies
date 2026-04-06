@@ -72,7 +72,14 @@ export const SERVICES: Service[] = [
   }
 ];
 
-export const PROJECTS: Project[] = [];
+export const PROJECTS: Project[] = [
+  { id: 1, title: 'VibeNote Studio', link: 'https://vibenote.studio/', category: 'Web Dev', industry: 'SaaS', metric: 'AI Website Generator for Agencies', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://vibenote.studio/' },
+  { id: 2, title: 'Optiofy', link: 'https://optiofy.com/', category: 'CRM', industry: 'Healthcare', metric: 'Optical Prescriptions & Billing App', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://optiofy.com/' },
+  { id: 3, title: 'Lenswala', link: 'https://lenswala.in/', category: 'Web Dev', industry: 'Retail', metric: 'Premium Frames & Eye Care', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://lenswala.in/' },
+  { id: 4, title: 'Akansha Rajput', link: 'https://akansharajput.in/', category: 'Web Dev', industry: 'Personal Brand', metric: 'Professional Portfolio & Branding', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://akansharajput.in/' },
+  { id: 5, title: 'Green River Camp', link: 'https://greenrivercamp.in/', category: 'Web Dev', industry: 'Hospitality', metric: 'Nature Retreat & Glamping', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://greenrivercamp.in/' },
+  { id: 6, title: 'Exponential Coin', link: 'https://exponential.social/', category: 'Web3', industry: 'Crypto', metric: 'Solana Meme Coin Launch', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://exponential.social/' }
+];
 
 export const BLOG_POSTS: BlogPost[] = [
   { id: 1, title: '5 Business Processes to Automate First', category: 'Strategy', date: 'Oct 12, 2025', excerpt: 'Discover the low-hanging fruit in your business that can be automated today.', readTime: '5 min', image: 'https://picsum.photos/seed/b1/600/400' },
