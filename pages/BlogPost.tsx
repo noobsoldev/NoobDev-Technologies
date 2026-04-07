@@ -9,6 +9,14 @@ export const BlogPost = () => {
   const [error, setError] = useState(false);
   const [newsletterState, setNewsletterState] = useState<'idle' | 'submitting' | 'success'>('idle');
 
+  useEffect(() => {
+    document.title = "Blog Post | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Read the full article on Noobdev's blog.");
+    }
+  }, []);
+
   const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setNewsletterState('submitting');
@@ -96,7 +104,7 @@ export const BlogPost = () => {
   return (
     <div className="page-transition pt-32 pb-20 bg-white">
       <div className="max-w-3xl mx-auto px-6">
-        <Link to="/blog" className="inline-block mb-12 text-xs font-mono font-bold uppercase tracking-widest text-gray-400 hover:text-[#FF0000] transition-colors">
+        <Link to="/blog" className="inline-block mb-12 text-xs font-mono font-bold uppercase tracking-widest text-gray-500 hover:text-[#FF0000] transition-colors">
           ← Back to Blog
         </Link>
 
@@ -146,7 +154,7 @@ export const BlogPost = () => {
             )}
             
             {newsletterState !== 'success' && (
-              <p className="mt-4 text-[10px] font-mono text-gray-400">0% Spam. 100% Value. Unsubscribe anytime.</p>
+              <p className="mt-4 text-[10px] font-mono text-gray-500">0% Spam. 100% Value. Unsubscribe anytime.</p>
             )}
           </div>
         </div>

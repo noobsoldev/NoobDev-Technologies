@@ -19,6 +19,14 @@ export const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const categories = ['All', 'Automation', 'Web Dev', 'Strategy', 'Case Study', 'Education'];
 
+  useEffect(() => {
+    document.title = "Blog | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Deep dives into business automation, no-code architecture, and the future of work.");
+    }
+  }, []);
+
   // Static list of posts - update this array when adding new HTML files to /public/blog/
   const posts: BlogPost[] = [
     {
@@ -68,14 +76,15 @@ export const Blog = () => {
                     alt={`${featuredPost.title} featured post`} 
                     width="600"
                     height="400"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
                 <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-6">
                     <span className="bg-[#FF0000] text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest">Featured</span>
-                    <span className="text-gray-400 text-xs font-mono">{new Date(featuredPost.date).toLocaleDateString()}</span>
+                    <span className="text-gray-500 text-xs font-mono">{new Date(featuredPost.date).toLocaleDateString()}</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-[#FF0000] transition-colors">
                     {featuredPost.title}
@@ -87,7 +96,7 @@ export const Blog = () => {
                     <Link to={`/blog/${featuredPost.slug}`} className="text-sm font-bold border-b-2 border-[#FF0000] pb-1 hover:text-[#FF0000] transition-colors">
                       Read the Full Article →
                     </Link>
-                    <span className="text-gray-400 text-xs font-mono tracking-tighter">[{featuredPost.readTime}]</span>
+                    <span className="text-gray-500 text-xs font-mono tracking-tighter">[{featuredPost.readTime}]</span>
                   </div>
                 </div>
               </div>
@@ -97,7 +106,7 @@ export const Blog = () => {
 
         {/* Filter Bar */}
         <div className="flex flex-wrap items-center gap-4 mb-16 pb-6 border-b border-gray-100">
-          <span className="text-xs font-mono text-gray-400 uppercase mr-4">Filter:</span>
+          <span className="text-xs font-mono text-gray-500 uppercase mr-4">Filter:</span>
           {categories.map(cat => (
             <button
               key={cat}
@@ -124,6 +133,7 @@ export const Blog = () => {
                   width="400"
                   height="240"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
                 />
                 <div className="absolute bottom-0 left-0 bg-white px-4 py-2 font-mono text-[10px] font-bold text-[#FF0000] border-t border-r border-gray-100">
@@ -132,7 +142,7 @@ export const Blog = () => {
               </div>
               
               <div className="flex-1 flex gap-6">
-                <div className="flex flex-col text-[10px] font-mono text-gray-300 pt-1 select-none">
+                <div className="flex flex-col text-[10px] font-mono text-gray-500 pt-1 select-none">
                   <span>01</span>
                   <span>02</span>
                   <span>03</span>
@@ -141,7 +151,7 @@ export const Blog = () => {
                 </div>
                 
                 <div className="flex-1">
-                  <div className="text-[10px] font-mono text-gray-400 mb-2">{new Date(post.date).toLocaleDateString()} — {post.readTime}</div>
+                  <div className="text-[10px] font-mono text-gray-500 mb-2">{new Date(post.date).toLocaleDateString()} — {post.readTime}</div>
                   <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF0000] transition-colors leading-tight">
                     {post.title}
                   </h3>

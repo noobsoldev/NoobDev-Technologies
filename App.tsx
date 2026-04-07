@@ -31,29 +31,6 @@ const PageLoader = () => (
 );
 
 const AppContent = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Reduced loading simulation to 300ms for better perceived performance
-    // or remove entirely if not needed for branding.
-    const timer = setTimeout(() => setIsLoading(false), 300);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
-        <div className="flex items-center text-4xl font-poppins font-bold animate-pulse">
-          <span>Noob</span>
-          <span className="text-[#FF0000] font-mono mx-1">{"{"}</span>
-          <span className="animate-bounce">...</span>
-          <span className="text-[#FF0000] font-mono mx-1">{"}"}</span>
-          <span>dev</span>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -105,7 +82,7 @@ const ScrollProgress = () => {
       const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
       setWidth(percent);
     };
-    window.addEventListener('scroll', updateScroll);
+    window.addEventListener('scroll', updateScroll, { passive: true });
     return () => window.removeEventListener('scroll', updateScroll);
   }, []);
 

@@ -1,11 +1,19 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BraceWrap } from '../components/Layout';
 import { SERVICES } from '../constants';
 import { Terminal, CodeSnippet } from '../components/Terminal';
 
 export const Services = () => {
+  useEffect(() => {
+    document.title = "Services | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Explore our technical expertise in AI workflows, custom web development, and business automation.");
+    }
+  }, []);
+
   return (
     <div className="page-transition pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -44,7 +52,7 @@ export const Services = () => {
                 
                 {s.features && (
                   <div className="mb-8">
-                    <h4 className="font-bold mb-4 text-sm font-mono text-gray-400">KEY FEATURES:</h4>
+                    <h4 className="font-bold mb-4 text-sm font-mono text-gray-500">KEY FEATURES:</h4>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {s.features.map(f => (
                         <li key={f} className="flex items-center text-gray-700 text-sm">
@@ -58,13 +66,13 @@ export const Services = () => {
                 <div className="flex flex-wrap gap-8 pt-8 border-t border-gray-100">
                     {s.pricing && (
                         <div>
-                            <div className="text-xs font-mono text-gray-400 uppercase mb-1">Starts at</div>
+                            <div className="text-xs font-mono text-gray-500 uppercase mb-1">Starts at</div>
                             <div className="text-2xl font-bold text-black">{s.pricing}</div>
                         </div>
                     )}
                     {s.timeline && (
                         <div>
-                            <div className="text-xs font-mono text-gray-400 uppercase mb-1">Timeline</div>
+                            <div className="text-xs font-mono text-gray-500 uppercase mb-1">Timeline</div>
                             <div className="text-2xl font-bold text-black">{s.timeline}</div>
                         </div>
                     )}

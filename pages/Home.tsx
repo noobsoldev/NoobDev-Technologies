@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BraceWrap, Logo } from '../components/Layout';
 import { Terminal, CodeSnippet } from '../components/Terminal';
@@ -6,6 +6,14 @@ import { SERVICES } from '../constants';
 
 export const Home = () => {
   const [newsletterState, setNewsletterState] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  useEffect(() => {
+    document.title = "Home | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Noobdev: We build custom automation workflows and high-performance websites for modern businesses.");
+    }
+  }, []);
 
   const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -104,7 +112,7 @@ studio.deploy({
       {/* Trust Bar */}
       <section className="py-12 border-y border-gray-100 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-xs font-mono text-gray-400 mb-10 uppercase tracking-widest">Integrating your favorite tools</p>
+          <p className="text-center text-xs font-mono text-gray-500 mb-10 uppercase tracking-widest">Integrating your favorite tools</p>
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-12">
             {integrationPartners.map(partner => (
               <a 
@@ -120,6 +128,7 @@ studio.deploy({
                   width="120" 
                   height="32" 
                   loading="lazy"
+                  decoding="async"
                   className="h-6 md:h-8 w-auto object-contain" 
                 />
                 <span className="text-sm font-bold font-mono text-gray-900 group-hover:text-black">{partner.name}</span>
@@ -174,7 +183,7 @@ studio.deploy({
                   <p className="text-gray-700 text-sm mb-6 leading-relaxed">{s.description}</p>
                 <Link 
                     to="/services"
-                    className="text-xs font-bold font-mono uppercase tracking-widest text-gray-400 group-hover:text-[#FF0000] transition-colors"
+                    className="text-xs font-bold font-mono uppercase tracking-widest text-gray-500 group-hover:text-[#FF0000] transition-colors"
                 >
                   Learn more →
                 </Link>
@@ -227,7 +236,7 @@ studio.deploy({
             ].map((t, idx) => (
               <div key={idx} className="bg-[#111] p-10 border border-gray-800 relative">
                 <div className="text-4xl text-[#FF0000] font-mono mb-6 leading-none">"</div>
-                <p className="text-gray-400 mb-8 italic leading-relaxed">{t.text}</p>
+                <p className="text-gray-500 mb-8 italic leading-relaxed">{t.text}</p>
                 <div>
                   <div className="font-bold text-lg">{t.name}</div>
                   <div className="text-sm font-mono text-[#FF0000]">{t.role}</div>
@@ -278,7 +287,7 @@ studio.deploy({
           )}
           
           {newsletterState !== 'success' && (
-            <p className="mt-4 text-xs font-mono text-gray-400">0% Spam. 100% Value. Unsubscribe anytime.</p>
+            <p className="mt-4 text-xs font-mono text-gray-500">0% Spam. 100% Value. Unsubscribe anytime.</p>
           )}
         </div>
       </section>

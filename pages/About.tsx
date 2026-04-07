@@ -1,9 +1,17 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BraceWrap } from '../components/Layout';
 import { Terminal, CodeSnippet } from '../components/Terminal';
 
 export const About = () => {
+  useEffect(() => {
+    document.title = "About | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Learn about Noobdev, our mission to democratize automation, and the team behind the code.");
+    }
+  }, []);
+
   return (
     <div className="page-transition pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">

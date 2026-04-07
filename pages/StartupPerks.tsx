@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BraceWrap } from '../components/Layout';
 
 interface Perk {
@@ -443,6 +443,14 @@ const PERKS: Perk[] = [
 export const StartupPerks = () => {
   const [activeCategory, setActiveCategory] = useState("All Perks");
 
+  useEffect(() => {
+    document.title = "Startup Perks | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Discover over $1.5M in free cloud credits, AI API access, developer tools, and startup programs.");
+    }
+  }, []);
+
   const filteredPerks = activeCategory === "All Perks" 
     ? PERKS 
     : PERKS.filter(perk => perk.category === activeCategory);
@@ -506,10 +514,10 @@ export const StartupPerks = () => {
               </div>
               
               <h3 className="text-2xl font-bold mb-1 group-hover:text-[#FF0000] transition-colors">{perk.company}</h3>
-              <p className="text-sm font-mono text-gray-400 mb-4">{perk.program}</p>
+              <p className="text-sm font-mono text-gray-500 mb-4">{perk.program}</p>
               
               <div className="mb-6">
-                <div className="text-xs font-mono text-gray-400 uppercase mb-1">Value</div>
+                <div className="text-xs font-mono text-gray-500 uppercase mb-1">Value</div>
                 <div className="text-xl font-bold text-black">{perk.value}</div>
               </div>
               
@@ -531,7 +539,7 @@ export const StartupPerks = () => {
 
         {filteredPerks.length === 0 && (
           <div className="py-20 text-center">
-            <p className="text-gray-400 font-mono">No perks found in this category.</p>
+            <p className="text-gray-500 font-mono">No perks found in this category.</p>
           </div>
         )}
       </div>

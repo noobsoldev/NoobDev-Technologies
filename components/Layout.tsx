@@ -29,7 +29,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -77,8 +77,12 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-black" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <span className="text-2xl">{isMenuOpen ? '✕' : '☰'}</span>
+        <button 
+          className="md:hidden text-black" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          <span className="text-2xl" aria-hidden="true">{isMenuOpen ? '✕' : '☰'}</span>
         </button>
       </div>
 
@@ -316,7 +320,12 @@ export const Footer = () => {
       {/* Terminal Modal */}
       {modalContent && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setModalContent(null)}></div>
+          <button 
+            className="absolute inset-0 w-full h-full bg-black/30 backdrop-blur-sm cursor-default border-none" 
+            onClick={() => setModalContent(null)}
+            aria-label="Close modal"
+            tabIndex={-1}
+          ></button>
           <div className="relative w-full max-w-2xl bg-[#1e1e1e] rounded-lg shadow-2xl overflow-hidden border border-gray-800 animate-in fade-in zoom-in duration-200">
             {/* Terminal Header */}
             <div className="bg-[#2d2d2d] px-4 py-3 flex items-center justify-between border-b border-gray-800">
@@ -326,14 +335,14 @@ export const Footer = () => {
                   <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                   <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                 </div>
-                <div className="ml-4 text-xs font-mono text-gray-400 flex items-center">
+                <div className="ml-4 text-xs font-mono text-gray-500 flex items-center">
                   <span className="mr-2">~/legal/</span>
                   <span className="text-white">{modalContent.title}</span>
                 </div>
               </div>
               <button 
                 onClick={() => setModalContent(null)}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-500 hover:text-white transition-colors"
               >
                 ✕
               </button>

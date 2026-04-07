@@ -1,9 +1,17 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BraceWrap } from '../components/Layout';
 
 export const Contact = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    document.title = "Contact | Noob{dev}";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Ready to automate your workflows? Send us a message and we'll get back to you within 24 hours.");
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,17 +74,17 @@ export const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-mono text-gray-400 uppercase mb-2">Name *</label>
+                    <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Name *</label>
                     <input required name="name" type="text" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000]" />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-gray-400 uppercase mb-2">Email *</label>
+                    <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Email *</label>
                     <input required name="email" type="email" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000]" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-mono text-gray-400 uppercase mb-2">Phone</label>
+                    <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Phone</label>
                     <div className="flex">
                       <select name="countryCode" className="w-24 bg-gray-50 border border-gray-200 border-r-0 px-2 py-3 focus:outline-none focus:border-[#FF0000] appearance-none text-sm">
                         <option value="+1">+1 (US)</option>
@@ -93,7 +101,7 @@ export const Contact = () => {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-gray-400 uppercase mb-2">Service Interest</label>
+                    <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Service Interest</label>
                     <select name="service" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] appearance-none">
                       <option>AI Automation</option>
                       <option>Custom Website</option>
@@ -104,7 +112,7 @@ export const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-gray-400 uppercase mb-2">Message *</label>
+                  <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Message *</label>
                   <textarea required name="message" rows={4} className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] resize-none"></textarea>
                 </div>
                 
@@ -128,7 +136,7 @@ export const Contact = () => {
           <div>
             <div className="space-y-12 mb-20">
               <div>
-                <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Location & Hours</h4>
+                <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Location & Hours</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <p className="font-bold text-lg mb-1">Global Automation Services</p>
@@ -142,14 +150,14 @@ export const Contact = () => {
               </div>
               
               <div>
-                <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Direct Contact</h4>
+                <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Direct Contact</h4>
                 <div className="space-y-4">
                   <a href="mailto:hello@noobdev.tech" className="block font-bold text-2xl hover:text-[#FF0000] transition-colors">hello@noobdev.tech</a>
                 </div>
               </div>
 
               <div>
-                <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Need urgent automation help?</h4>
+                <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Need urgent automation help?</h4>
                 <p className="text-gray-700 mb-4">Connect instantly on WhatsApp for quick discussions, audits, or urgent automation needs.</p>
                 <a 
                   href="https://wa.me/919810141789" 
@@ -159,12 +167,12 @@ export const Contact = () => {
                 >
                   Chat on WhatsApp →
                 </a>
-                <p className="text-xs text-gray-400">Typically replies within a few minutes during working hours.</p>
+                <p className="text-xs text-gray-500">Typically replies within a few minutes during working hours.</p>
               </div>
             </div>
 
             <div>
-              <h4 className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-8 border-b border-gray-100 pb-2">Frequently Asked Questions</h4>
+              <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-8 border-b border-gray-100 pb-2">Frequently Asked Questions</h4>
               <div className="space-y-6">
                 {faqs.map((faq, idx) => (
                   <div key={idx} className="group">
