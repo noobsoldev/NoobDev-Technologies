@@ -127,7 +127,7 @@ studio.deploy({
       {/* Trust Bar */}
       <section className="py-12 border-y border-gray-100 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-xs font-mono text-gray-500 mb-10 uppercase tracking-widest">Integrating your favorite tools</p>
+          <p className="text-center text-xs font-mono text-gray-600 mb-10 uppercase tracking-widest">Integrating your favorite tools</p>
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-12">
             {integrationPartners.map(partner => (
               <a 
@@ -179,8 +179,8 @@ studio.deploy({
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
-              <h2 className="text-4xl font-bold mb-4">Our <BraceWrap>Services</BraceWrap></h2>
-              <p className="text-gray-700 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy.</p>
+              <h2 className="text-4xl font-bold mb-4">Expert <BraceWrap>Website Development</BraceWrap> & AI Automation</h2>
+              <p className="text-gray-700 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy with powerful AI tools.</p>
             </div>
             <Link 
                 to="/services"
@@ -197,7 +197,7 @@ studio.deploy({
                   <h3 className="text-xl font-bold mb-3">{s.title}</h3>
                   <p className="text-gray-700 text-sm mb-6 leading-relaxed">{s.description}</p>
                 <Link 
-                    to="/services"
+                    to={`/services#service-${s.id}`}
                     className="text-xs font-bold font-mono uppercase tracking-widest text-gray-500 group-hover:text-[#FF0000] transition-colors"
                 >
                   Learn more →
@@ -208,10 +208,34 @@ studio.deploy({
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 bg-white overflow-hidden">
+      {/* Who We Help */}
+      <section className="py-24 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-16 text-center">How It <BraceWrap>Works</BraceWrap></h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Who We <BraceWrap>Help</BraceWrap></h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">We build custom website development and AI automation solutions tailored for specific industries.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: 'Digital Agencies', desc: 'White-label web development and automated client reporting pipelines to increase your profit margins.' },
+              { title: 'E-commerce Brands', desc: 'Headless Shopify builds, automated inventory syncing, and abandoned cart recovery workflows.' },
+              { title: 'Healthcare Clinics', desc: 'HIPAA-compliant CRM setups, automated patient recall SMS, and secure appointment booking systems.' },
+              { title: 'Local Businesses', desc: 'High-converting landing pages, local SEO optimization, and automated lead qualification bots.' }
+            ].map((audience, idx) => (
+              <div key={idx} className="bg-gray-50 p-8 border border-gray-100 hover:border-black transition-colors group">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-[#FF0000] transition-colors">{audience.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{audience.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-16 text-center">Our <BraceWrap>Website Development</BraceWrap> & Automation Process</h2>
           
           <div className="relative">
             {/* Connecting line */}

@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { BraceWrap } from '../components/Layout';
 import { Terminal, CodeSnippet } from '../components/Terminal';
 
@@ -25,13 +26,13 @@ export const About = () => {
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
               <p>
-                We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noobdev was built to democratize high-end business automation for companies of all sizes.
+                We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noobdev was built to democratize <Link to="/services" className="text-[#FF0000] underline decoration-gray-300 hover:decoration-[#FF0000] transition-colors">high-end business automation</Link> for companies of all sizes.
               </p>
               <p>
                 The gap between what modern software can do and how businesses actually use it is massive. Most teams are stuck doing repetitive work that an AI could handle in seconds.
               </p>
               <p>
-                That's where we come in. We speak both "developer" and "business owner," translating complex API documentation into simple, effective workflows that actually move the needle.
+                That's where we come in. We speak both "developer" and "business owner," translating complex API documentation into simple, effective workflows that actually drive <Link to="/showcase" className="text-[#FF0000] underline decoration-gray-300 hover:decoration-[#FF0000] transition-colors">real-world results</Link>.
               </p>
             </div>
           </div>
@@ -67,6 +68,42 @@ console.log(ourMission().goal);
               <p className="text-gray-700 leading-relaxed">{v.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Meet the Founder */}
+        <div className="mb-32 bg-gray-50 border border-gray-200 p-8 md:p-16 rounded-2xl">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="md:w-1/3 w-full">
+              <Terminal title="noob_bot.exe" className="w-full aspect-square">
+                <div className="h-full flex flex-col items-center justify-center pt-4 md:pt-12">
+                  <pre className="text-[#27C93F] font-mono text-xl md:text-2xl leading-tight animate-bounce">
+{`   _____
+  [ o_o ]
+  /|___|\\
+   _|_|_`}
+                  </pre>
+                  <div className="mt-8 text-white font-mono text-sm">
+                    &gt; echo "Hi!" <span className="inline-block w-2 h-4 bg-white ml-1 align-middle animate-pulse"></span>
+                  </div>
+                </div>
+              </Terminal>
+            </div>
+            <div className="md:w-2/3">
+              <h2 className="text-3xl font-bold mb-2">Hi, I'm a noob Dev like you.</h2>
+              <p className="text-[#FF0000] font-mono text-sm mb-6 uppercase tracking-widest">Lead Automation Architect</p>
+              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <p>
+                  I started Noob{`{dev}`} because I saw too many great businesses bottlenecked by bad software. I was tired of seeing agencies charge $50,000 for custom software when a well-architected Zapier workflow and a headless CMS could do the job better, faster, and cheaper.
+                </p>
+                <p>
+                  My approach is entirely practical. I don't care about using the trendiest new framework; I care about what actually solves your problem. Whether that means writing a custom Node.js script or simply connecting two apps via API, the goal is always the same: eliminate manual work so you can focus on growth.
+                </p>
+                <p>
+                  When you work with us, you aren't getting handed off to a junior account manager. You're working directly with the engineers building your systems.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="bg-[#FF0000] text-white p-12 md:p-20 flex flex-col md:flex-row justify-between items-center gap-12">

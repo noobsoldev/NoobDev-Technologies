@@ -10,7 +10,7 @@ export const Terminal = ({ children, title = "automation.js", className = "" }: 
         <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
         <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
       </div>
-      <div className="text-gray-500 text-xs font-mono">{title}</div>
+      <div className="text-gray-600 text-xs font-mono">{title}</div>
       <div className="w-10"></div>
     </div>
     <div className="p-6 font-mono text-sm leading-relaxed overflow-x-auto relative group">

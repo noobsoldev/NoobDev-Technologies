@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { BraceWrap } from '../components/Layout';
 import { PROJECTS } from '../constants';
 
-const ProjectImage = ({ src, alt, className }: { src: string, alt: string, className: string }) => {
+const ProjectImage = ({ src, alt, className, priority = false }: { src: string, alt: string, className: string, priority?: boolean }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -22,7 +23,8 @@ const ProjectImage = ({ src, alt, className }: { src: string, alt: string, class
         alt={alt} 
         width="600"
         height="400"
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
         decoding="async"
         onLoad={() => setIsLoaded(true)}
         className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} relative z-10`} 
@@ -112,8 +114,8 @@ export const Showcase = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 font-mono text-sm border-b-2 transition-all ${
-                filter === cat ? 'border-[#FF0000] text-[#FF0000] font-bold' : 'border-transparent text-gray-500 hover:text-black'
+              className={`px-6 py-3 font-mono text-sm border-b-2 transition-all ${
+                filter === cat ? 'border-[#FF0000] text-[#FF0000] font-bold' : 'border-transparent text-gray-600 hover:text-black'
               }`}
             >
               {filter === cat ? `{${cat}}` : cat}
@@ -144,6 +146,7 @@ export const Showcase = () => {
                   <ProjectImage 
                     src={project.image} 
                     alt={`${project.title} project showcase`} 
+                    priority={idx < 2}
                     className="w-full h-full object-cover object-top group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700" 
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 z-20 pointer-events-none"></div>
@@ -167,19 +170,27 @@ export const Showcase = () => {
                       <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider mb-1">Key Result</div>
                       <div className="font-bold text-gray-900">{project.metric}</div>
                     </div>
-                    {project.link && (
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white group-hover:bg-[#FF0000] transition-colors shadow-md"
-                        aria-label={`Visit ${project.title}`}
+                    <div className="flex items-center space-x-3">
+                      <Link 
+                        to={`/projects/${project.slug}`}
+                        className="bg-[#FF0000] text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-[#cc0000] transition-colors shadow-sm"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                      </a>
-                    )}
+                        Read Case Study
+                      </Link>
+                      {project.link && (
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:bg-[#FF0000] transition-colors shadow-md"
+                          aria-label={`Visit ${project.title}`}
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

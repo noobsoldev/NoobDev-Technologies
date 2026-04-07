@@ -235,7 +235,7 @@ export const Footer = () => {
           <div>
             <Logo className="text-xl mb-4" />
             <p className="text-sm font-bold text-black mb-1">NO-CODE AUTOMATION STUDIO</p>
-            <p className="text-xs text-gray-500 font-mono mb-4">estd 2025</p>
+            <p className="text-xs text-gray-600 font-mono mb-4">estd 2025</p>
             <p className="text-sm text-gray-700 leading-relaxed">
               Democratizing automation for businesses worldwide. Built by developers, designed for everyone.
             </p>
@@ -243,9 +243,9 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-gray-900 mb-6 font-mono text-sm underline decoration-[#FF0000]">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About', 'Services', 'Showcase', 'Blog', 'Startup Perks', 'Contact'].map((item) => (
+              {['Home', 'About', 'Services', 'Showcase', 'Blog', 'Startup Perks', '100 Business Initiative', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link to={item === 'Home' ? '/' : item === 'Startup Perks' ? '/perks' : `/${item.toLowerCase().replace(' ', '')}`} className="text-gray-700 hover:text-[#FF0000] text-sm transition-colors">
+                  <Link to={item === 'Home' ? '/' : item === 'Startup Perks' ? '/perks' : item === '100 Business Initiative' ? '/100-business-initiative' : `/${item.toLowerCase().replace(' ', '')}`} className="text-gray-700 hover:text-[#FF0000] text-sm transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -294,8 +294,8 @@ export const Footer = () => {
               )}
             </div>
             <div className="flex space-x-4">
-              <a href="https://x.com/noobdevtech" target="_blank" rel="noopener noreferrer" title="X (Twitter)" aria-label="X (Twitter)" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[#FF0000] hover:text-[#FF0000] transition-all">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+              <a href="https://x.com/noobdevtech" target="_blank" rel="noopener noreferrer" title="X (Twitter)" aria-label="X (Twitter)" className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[#FF0000] hover:text-[#FF0000] transition-all">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
               </a>
               <a href="https://instagram.com/noobdevtech" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram" className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[#FF0000] hover:text-[#FF0000] transition-all">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.332 3.608 1.308.975.975 1.245 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.245-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.245-2.242-1.308-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.245 3.608-1.308 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.617 6.76 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.357-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c.796 0 1.441-.645 1.441-1.44s-.645-1.44-1.441-1.44-1.44.645-1.44 1.44.645 1.44 1.44 1.44z"></path></svg>
@@ -306,12 +306,12 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 space-y-4 md:space-y-0">
+        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 space-y-4 md:space-y-0">
           <p>© 2025 Noobdev. All rights reserved.</p>
           <div className="flex space-x-6">
-            <button onClick={() => openModal('privacy')} className="hover:text-[#FF0000]">Privacy</button>
-            <button onClick={() => openModal('terms')} className="hover:text-[#FF0000]">Terms</button>
-            <button onClick={() => openModal('cookies')} className="hover:text-[#FF0000]">Cookies</button>
+            <button onClick={() => openModal('privacy')} className="hover:text-[#FF0000] p-2 -m-2">Privacy</button>
+            <button onClick={() => openModal('terms')} className="hover:text-[#FF0000] p-2 -m-2">Terms</button>
+            <button onClick={() => openModal('cookies')} className="hover:text-[#FF0000] p-2 -m-2">Cookies</button>
           </div>
           <p>Made with <span className="text-[#FF0000]">{"{❤️}"}</span> by Noobdev</p>
         </div>

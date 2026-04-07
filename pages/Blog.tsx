@@ -31,13 +31,33 @@ export const Blog = () => {
   const posts: BlogPost[] = [
     {
       id: '1',
-      title: 'The Future of Business Automation',
-      slug: 'future-of-automation',
-      date: '2024-02-25',
+      title: 'How to Automate Shopify Order Fulfillment with Zapier and Make.com',
+      slug: 'automate-shopify-fulfillment-zapier-make',
+      date: '2026-03-15',
       category: 'Automation',
-      excerpt: 'How no-code tools and AI are reshaping the landscape of modern business operations.',
-      readTime: '5 min read',
-      image: 'https://picsum.photos/seed/automation/800/400'
+      excerpt: 'Stop manually copying tracking numbers. Learn how to build a bulletproof e-commerce automation pipeline that syncs Shopify, your 3PL, and your accounting software in real-time.',
+      readTime: '8 min read',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: '2',
+      title: 'The True Cost of Building a Custom Healthcare CRM in 2026',
+      slug: 'cost-custom-healthcare-crm-2026',
+      date: '2026-02-28',
+      category: 'Web Dev',
+      excerpt: 'Thinking about moving off off-the-shelf software? We break down the real costs, timelines, and HIPAA compliance requirements for building a custom patient management system.',
+      readTime: '12 min read',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: '3',
+      title: 'Headless E-commerce vs. Traditional Shopify: Which Scales Better?',
+      slug: 'headless-ecommerce-vs-traditional-shopify',
+      date: '2026-01-10',
+      category: 'Strategy',
+      excerpt: 'When does it make sense to decouple your frontend from your Shopify backend? A technical deep dive into Next.js headless builds for high-volume brands.',
+      readTime: '10 min read',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -77,14 +97,14 @@ export const Blog = () => {
                     width="600"
                     height="400"
                     loading="eager"
-                    fetchpriority="high"
+                    fetchPriority="high"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
                 <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-6">
                     <span className="bg-[#FF0000] text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest">Featured</span>
-                    <span className="text-gray-500 text-xs font-mono">{new Date(featuredPost.date).toLocaleDateString()}</span>
+                    <span className="text-gray-600 text-xs font-mono">{new Date(featuredPost.date).toLocaleDateString()}</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-[#FF0000] transition-colors">
                     {featuredPost.title}

@@ -89,7 +89,7 @@ export const Contact = () => {
                 <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Name *</label>
+                    <label className="block text-xs font-mono text-gray-600 uppercase mb-2">Name *</label>
                     <input required name="name" type="text" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000]" />
                   </div>
                   <div>

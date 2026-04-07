@@ -491,7 +491,7 @@ export const StartupPerks = () => {
                 className={`px-6 py-3 text-sm font-bold font-mono uppercase tracking-widest transition-all border-2 ${
                   activeCategory === cat 
                     ? "bg-black text-white border-black" 
-                    : "bg-white text-gray-500 border-gray-100 hover:border-[#FF0000] hover:text-black"
+                    : "bg-white text-gray-600 border-gray-100 hover:border-[#FF0000] hover:text-black"
                 }`}
               >
                 {cat}
@@ -542,6 +542,20 @@ export const StartupPerks = () => {
             <p className="text-gray-500 font-mono">No perks found in this category.</p>
           </div>
         )}
+
+        {/* CTA Section */}
+        <div className="mt-24 bg-gray-50 border border-gray-200 p-12 text-center rounded-2xl">
+          <h2 className="text-3xl font-bold mb-4">Need help implementing these tools?</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
+            Claiming credits is the easy part. Integrating AWS, Google Cloud, and AI APIs into a scalable product is hard. Let our team handle the technical architecture.
+          </p>
+          <a 
+            href="/contact" 
+            className="inline-block bg-[#FF0000] text-white px-8 py-4 font-bold rounded-lg hover:bg-[#cc0000] transition-all shadow-md"
+          >
+            Get a Free Consultation
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -15,12 +15,37 @@ export interface Service {
 
 export interface Project {
   id: number;
+  slug: string;
   title: string;
   category: string;
   industry: string;
   metric: string;
   image: string;
   link?: string;
+}
+
+export interface CaseStudy {
+  slug: string;
+  clientName: string;
+  tagline: string;
+  liveUrl: string;
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
+  story: {
+    hook: string;
+    context: string;
+    problemDepth: string;
+    strategicThinking: string;
+    execution: string;
+    outcome: string;
+  };
+  keyTakeaways: string[];
+  whoIsThisFor: string;
+  successFactors: string[];
+  techStack: string[];
 }
 
 export interface BlogPost {

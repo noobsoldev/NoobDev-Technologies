@@ -104,7 +104,7 @@ export const BlogPost = () => {
   return (
     <div className="page-transition pt-32 pb-20 bg-white">
       <div className="max-w-3xl mx-auto px-6">
-        <Link to="/blog" className="inline-block mb-12 text-xs font-mono font-bold uppercase tracking-widest text-gray-500 hover:text-[#FF0000] transition-colors">
+        <Link to="/blog" className="inline-block mb-12 text-xs font-mono font-bold uppercase tracking-widest text-gray-600 hover:text-[#FF0000] transition-colors">
           ← Back to Blog
         </Link>
 
