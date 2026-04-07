@@ -3,6 +3,34 @@ import React, { useState, useEffect, useRef } from 'react';
 import { BraceWrap } from '../components/Layout';
 import { PROJECTS } from '../constants';
 
+const ProjectImage = ({ src, alt, className }: { src: string, alt: string, className: string }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (imgRef.current?.complete) {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  return (
+    <>
+      <div className={`absolute inset-0 bg-gray-200 animate-pulse ${isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 z-0`} />
+      <img 
+        ref={imgRef}
+        src={src} 
+        alt={alt} 
+        width="600"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} relative z-10`} 
+      />
+    </>
+  );
+};
+
 export const Showcase = () => {
   const [filter, setFilter] = useState('All');
   const categories = ['All', 'Automation', 'Web Dev', 'SEO', 'CRM'];
@@ -113,16 +141,12 @@ export const Showcase = () => {
                   className="relative aspect-video overflow-hidden bg-gray-50 border-b border-gray-100 w-full block focus:outline-none focus:ring-2 focus:ring-[#FF0000]"
                   aria-label={`View larger image of ${project.title}`}
                 >
-                  <img 
+                  <ProjectImage 
                     src={project.image} 
                     alt={`${project.title} project showcase`} 
-                    width="600"
-                    height="400"
-                    loading="lazy"
-                    decoding="async"
                     className="w-full h-full object-cover object-top group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700" 
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 z-20 pointer-events-none"></div>
                 </button>
 
                 {/* Content Section */}
