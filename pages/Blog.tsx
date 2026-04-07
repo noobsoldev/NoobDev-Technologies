@@ -78,7 +78,7 @@ export const Blog = () => {
             <span className="font-mono text-xs text-[#FF0000] uppercase tracking-widest">The Terminal Blog</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <BraceWrap>Insights</BraceWrap> & Updates
+            <BraceWrap>Insights</BraceWrap> & Updates: No-Code Automation Studio Blog
           </h1>
           <p className="text-xl text-gray-700 max-w-2xl leading-relaxed">
             Deep dives into business automation, no-code architecture, and the future of work.

@@ -55,7 +55,7 @@ export const Initiative = () => {
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Build Instant Authority & Drive Leads</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Build Instant Authority & Drive Leads with AI Automation for Small Business</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We don't just build a digital brochure. We craft a complete lead-generation machine designed specifically to turn visitors into paying customers.
             </p>
@@ -103,7 +103,7 @@ export const Initiative = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Here's How It Works</h2>
-            <p className="text-xl text-gray-600">A streamlined process to get your business online and generating leads in record time.</p>
+            <p className="text-xl text-gray-600">A streamlined process to get your business online and generating leads in record time with AI workflow automation.</p>
           </div>
 
           <div className="space-y-12 relative">
@@ -146,7 +146,7 @@ export const Initiative = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">The Noob<BraceWrap>dev</BraceWrap> Advantage</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">The Noob<BraceWrap>dev</BraceWrap> Advantage: Your No-Code Automation Agency</h2>
               <p className="text-xl text-gray-400 mb-8">
                 Big agencies charge lakhs because they have massive overhead, account managers, and slow processes. We use code and AI to deliver the same enterprise-grade systems at a fraction of the cost.
               </p>

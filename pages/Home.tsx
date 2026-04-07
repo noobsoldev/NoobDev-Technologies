@@ -83,7 +83,7 @@ export const Home = () => {
               <BraceWrap>Automate</BraceWrap> Your Business Without Writing Code
             </h1>
             <p className="text-xl text-gray-700 mb-10 leading-relaxed max-w-xl">
-              The no-code automation studio that connects your apps, automates workflows, and scales your operations — all without a single line of code.
+              The no-code automation studio that connects your apps, automates workflows, and scales your operations — all without a single line of code. Looking to hire no-code developer India? We build your systems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
@@ -180,7 +180,7 @@ studio.deploy({
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
               <h2 className="text-4xl font-bold mb-4">Expert <BraceWrap>Website Development</BraceWrap> & AI Automation</h2>
-              <p className="text-gray-700 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy with powerful AI tools.</p>
+              <p className="text-gray-700 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy with powerful AI workflow automation.</p>
             </div>
             <Link 
                 to="/services"
@@ -213,7 +213,7 @@ studio.deploy({
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Who We <BraceWrap>Help</BraceWrap></h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">We build custom website development and AI automation solutions tailored for specific industries.</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">We build custom website development and AI automation for small business and specific industries.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -243,8 +243,8 @@ studio.deploy({
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
               {[
-                { title: 'Consult', step: '01', desc: 'We understand your unique workflows and identify bottlenecks.' },
-                { title: 'Build', step: '02', desc: 'We design and deploy your custom no-code automation systems.' },
+                { title: 'Consult', step: '01', desc: 'We understand your unique workflows and identify bottlenecks as a leading no-code automation agency.' },
+                { title: 'Build', step: '02', desc: 'We design and deploy your custom no-code automation systems. As a Make.com automation agency, we also handle n8n setup and automation.' },
                 { title: 'Launch', step: '03', desc: 'You save hours every day as your business runs on autopilot.' },
               ].map((item, idx) => (
                 <div key={idx} className="bg-white border border-gray-100 p-8 text-center relative hover:translate-y-[-8px] transition-transform duration-300">
