@@ -51,8 +51,23 @@ export const Home = () => {
     { name: 'n8n', url: 'https://n8n.io', logo: 'https://cdn.simpleicons.org/n8n/FF6C37' }
   ];
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Noobdev",
+    "url": "https://noobdev.tech",
+    "logo": "https://noobdev.tech/favicon.svg",
+    "description": "The no-code automation studio that connects your apps, automates workflows, and scales your operations.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9810141789",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <div className="page-transition">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">

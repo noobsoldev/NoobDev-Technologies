@@ -73,17 +73,17 @@ export const SERVICES: Service[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  { id: 1, title: 'VibeNote Studio', link: 'https://vibenote.studio/', category: 'Web Dev', industry: 'SaaS', metric: 'AI Website Generator for Agencies', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://vibenote.studio/' },
-  { id: 2, title: 'Optiofy', link: 'https://optiofy.com/', category: 'CRM', industry: 'Healthcare', metric: 'Optical Prescriptions & Billing App', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://optiofy.com/' },
-  { id: 3, title: 'Lenswala', link: 'https://lenswala.in/', category: 'Web Dev', industry: 'Retail', metric: 'Premium Frames & Eye Care', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://lenswala.in/' },
-  { id: 4, title: 'Akansha Rajput', link: 'https://akansharajput.in/', category: 'Web Dev', industry: 'Personal Brand', metric: 'Professional Portfolio & Branding', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://akansharajput.in/' },
-  { id: 5, title: 'Green River Camp', link: 'https://greenrivercamp.in/', category: 'Web Dev', industry: 'Hospitality', metric: 'Nature Retreat & Glamping', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://greenrivercamp.in/' },
-  { id: 6, title: 'Exponential Coin', link: 'https://exponential.social/', category: 'Web3', industry: 'Crypto', metric: 'Solana Meme Coin Launch', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://exponential.social/' },
-  { id: 7, title: 'Shri Ji Jewellers', link: 'https://shriji.jewelry/', category: 'Web Dev', industry: 'Retail', metric: 'Premium Jewelry Showroom', image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://shriji.jewelry/' }
+  { id: 1, title: 'VibeNote Studio', link: 'https://vibenote.studio/', category: 'Web Dev', industry: 'SaaS', metric: 'AI Website Generator for Agencies', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80' },
+  { id: 2, title: 'Optiofy', link: 'https://optiofy.com/', category: 'CRM', industry: 'Healthcare', metric: 'Optical Prescriptions & Billing App', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80' },
+  { id: 3, title: 'Lenswala', link: 'https://lenswala.in/', category: 'Web Dev', industry: 'Retail', metric: 'Premium Frames & Eye Care', image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=80' },
+  { id: 4, title: 'Akansha Rajput', link: 'https://akansharajput.in/', category: 'Web Dev', industry: 'Personal Brand', metric: 'Professional Portfolio & Branding', image: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=1200&q=80' },
+  { id: 5, title: 'Green River Camp', link: 'https://greenrivercamp.in/', category: 'Web Dev', industry: 'Hospitality', metric: 'Nature Retreat & Glamping', image: 'https://images.unsplash.com/photo-1504280390224-325322c04b1e?auto=format&fit=crop&w=1200&q=80' },
+  { id: 6, title: 'Exponential Coin', link: 'https://exponential.social/', category: 'Web3', industry: 'Crypto', metric: 'Solana Meme Coin Launch', image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=1200&q=80' },
+  { id: 7, title: 'Shri Ji Jewellers', link: 'https://shriji.jewelry/', category: 'Web Dev', industry: 'Retail', metric: 'Premium Jewelry Showroom', image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80' }
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
-  { id: 1, title: '5 Business Processes to Automate First', category: 'Strategy', date: 'Oct 12, 2025', excerpt: 'Discover the low-hanging fruit in your business that can be automated today.', readTime: '5 min', image: 'https://picsum.photos/seed/b1/600/400' },
-  { id: 2, title: 'No-Code vs Low-Code: What\'s the Difference?', category: 'Education', date: 'Oct 08, 2025', excerpt: 'Understand which path is right for your next digital project.', readTime: '7 min', image: 'https://picsum.photos/seed/b2/600/400' },
-  { id: 3, title: 'How We Saved ClientX 20 Hours Per Week', category: 'Case Study', date: 'Oct 01, 2025', excerpt: 'A deep dive into our recent automation project for a logistics firm.', readTime: '10 min', image: 'https://picsum.photos/seed/b3/600/400' }
+  { id: 1, title: '5 Business Processes to Automate First', category: 'Strategy', date: 'Oct 12, 2025', excerpt: 'Discover the low-hanging fruit in your business that can be automated today.', readTime: '5 min', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80' },
+  { id: 2, title: 'No-Code vs Low-Code: What\'s the Difference?', category: 'Education', date: 'Oct 08, 2025', excerpt: 'Understand which path is right for your next digital project.', readTime: '7 min', image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80' },
+  { id: 3, title: 'How We Saved ClientX 20 Hours Per Week', category: 'Case Study', date: 'Oct 01, 2025', excerpt: 'A deep dive into our recent automation project for a logistics firm.', readTime: '10 min', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80' }
 ];

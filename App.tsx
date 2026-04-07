@@ -12,6 +12,7 @@ const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module
 const BlogPost = lazy(() => import('./pages/BlogPost').then(module => ({ default: module.BlogPost })));
 const StartupPerks = lazy(() => import('./pages/StartupPerks').then(module => ({ default: module.StartupPerks })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
+const NotFound = lazy(() => import('./pages/NotFound').then(module => ({ default: module.NotFound })));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,7 +48,7 @@ const AppContent = () => {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/perks" element={<StartupPerks />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
@@ -74,13 +75,20 @@ const ScrollProgress = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const updateScroll = () => {
-      const h = document.documentElement, 
-            b = document.body,
-            st = 'scrollTop',
-            sh = 'scrollHeight';
-      const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-      setWidth(percent);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const h = document.documentElement, 
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+          const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+          setWidth(percent);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', updateScroll, { passive: true });
     return () => window.removeEventListener('scroll', updateScroll);

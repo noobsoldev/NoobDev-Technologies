@@ -47,8 +47,22 @@ export const Contact = () => {
     { q: 'Can you work with our existing tools?', a: 'Yes, our specialty is connecting existing SaaS ecosystems (Zapier, Make, HubSpot, etc.) to work in harmony.' },
   ];
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Noobdev",
+    "image": "https://noobdev.tech/favicon.svg",
+    "telephone": "+919810141789",
+    "email": "hello@noobdev.tech",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  };
+
   return (
     <div className="page-transition pt-32 pb-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Let's <BraceWrap>Build</BraceWrap> Something</h1>
@@ -72,6 +86,7 @@ export const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Name *</label>
