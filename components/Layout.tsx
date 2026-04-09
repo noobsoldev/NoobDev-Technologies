@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Page } from '../types';
+import { SERVICES } from '../constants';
 
 export const Logo = ({ className = "" }: { className?: string }) => (
   <div className={`flex items-center font-poppins font-bold tracking-tight select-none ${className}`}>
@@ -57,17 +58,47 @@ export const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.value}
-              to={link.value}
-              className={`text-sm font-medium transition-colors hover:text-[#FF0000] ${
-                isActive(link.value) ? 'text-[#FF0000] border-b-2 border-[#FF0000]' : 'text-gray-700'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.label === 'Services') {
+              return (
+                <div key={link.value} className="relative group">
+                  <Link
+                    to={link.value}
+                    className={`text-sm font-medium transition-colors hover:text-[#FF0000] flex items-center gap-1 ${
+                      isActive(link.value) ? 'text-[#FF0000] border-b-2 border-[#FF0000]' : 'text-gray-700'
+                    }`}
+                  >
+                    {link.label}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </Link>
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="py-2">
+                      {SERVICES.map((service) => (
+                        <Link
+                          key={service.id}
+                          to={`/services/${service.id}`}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#FF0000] transition-colors"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={link.value}
+                to={link.value}
+                className={`text-sm font-medium transition-colors hover:text-[#FF0000] ${
+                  isActive(link.value) ? 'text-[#FF0000] border-b-2 border-[#FF0000]' : 'text-gray-700'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link 
             to="/contact"
             className="bg-[#FF0000] text-white px-6 py-2 rounded-sm text-sm font-bold hover:bg-black transition-all duration-300"
@@ -88,17 +119,44 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl py-6 px-6 flex flex-col space-y-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.value}
-              to={link.value}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-left text-lg font-bold ${isActive(link.value) ? 'text-[#FF0000]' : 'text-gray-900'}`}
-            >
-              {isActive(link.value) ? `{${link.label}}` : link.label}
-            </Link>
-          ))}
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl py-6 px-6 flex flex-col space-y-4 max-h-[80vh] overflow-y-auto">
+          {navLinks.map((link) => {
+            if (link.label === 'Services') {
+              return (
+                <div key={link.value} className="flex flex-col space-y-2">
+                  <Link
+                    to={link.value}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`text-left text-lg font-bold ${isActive(link.value) ? 'text-[#FF0000]' : 'text-gray-900'}`}
+                  >
+                    {isActive(link.value) ? `{${link.label}}` : link.label}
+                  </Link>
+                  <div className="pl-4 flex flex-col space-y-2 border-l-2 border-gray-100 ml-2">
+                    {SERVICES.map((service) => (
+                      <Link
+                        key={service.id}
+                        to={`/services/${service.id}`}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="text-left text-sm text-gray-600 hover:text-[#FF0000]"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={link.value}
+                to={link.value}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-left text-lg font-bold ${isActive(link.value) ? 'text-[#FF0000]' : 'text-gray-900'}`}
+              >
+                {isActive(link.value) ? `{${link.label}}` : link.label}
+              </Link>
+            );
+          })}
           <Link 
             to="/contact"
             onClick={() => setIsMenuOpen(false)}
@@ -255,7 +313,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold text-gray-900 mb-6 font-mono text-sm underline decoration-[#FF0000]">Services</h3>
             <ul className="space-y-3">
-              {['AI Automation', 'Web Development', 'SEO Services', 'CRM Solutions'].map((item) => (
+              {['AI Automation', 'Web Development', 'SEO & GEO Services', 'CRM Solutions'].map((item) => (
                 <li key={item}>
                   <Link to="/services" className="text-gray-700 hover:text-[#FF0000] text-sm transition-colors">
                     {item}

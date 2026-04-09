@@ -25,15 +25,15 @@ export const Services = () => {
         {/* Services Hub */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
           {SERVICES.map((s) => (
-            <a 
+            <Link 
               key={s.id}
-              href={`#service-${s.id}`} 
-              className="bg-white p-8 border border-gray-100 hover:border-[#FF0000] transition-all group"
+              to={`/services/${s.id}`} 
+              className="bg-white p-8 border border-gray-100 hover:border-[#FF0000] transition-all group block"
             >
               <div className="text-2xl font-mono text-[#FF0000] mb-4">{s.icon}</div>
               <h3 className="text-lg font-bold mb-2">{s.title}</h3>
               <p className="text-gray-600 text-xs leading-relaxed">{s.description}</p>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -80,12 +80,20 @@ export const Services = () => {
                     )}
                 </div>
 
-                <Link 
-                  to="/contact"
-                  className="mt-10 inline-block bg-black text-white px-8 py-4 font-bold hover:bg-[#FF0000] transition-colors"
-                >
-                  Start Your {s.title} →
-                </Link>
+                <div className="flex gap-4 mt-10">
+                  <Link 
+                    to={`/services/${s.id}`}
+                    className="inline-block bg-black text-white px-8 py-4 font-bold hover:bg-[#FF0000] transition-colors"
+                  >
+                    Learn More →
+                  </Link>
+                  <Link 
+                    to="/contact"
+                    className="inline-block border border-gray-200 text-black px-8 py-4 font-bold hover:border-[#FF0000] hover:text-[#FF0000] transition-colors"
+                  >
+                    Book Consultation
+                  </Link>
+                </div>
               </div>
 
               <div className="lg:w-1/2 w-full">

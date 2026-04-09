@@ -34,12 +34,12 @@ export const SERVICES: Service[] = [
     timeline: '4-12 weeks'
   },
   {
-    id: 'seo-optimization',
-    title: 'SEO Optimization',
-    description: 'Data-driven strategies to boost your organic visibility.',
+    id: 'seo-geo-optimization',
+    title: 'SEO & GEO Optimization',
+    description: 'Data-driven strategies to boost your organic and AI generative visibility.',
     icon: '{SEO}',
-    detailedDescription: 'SEO isn\'t magic; it\'s engineering and content strategy. We provide comprehensive technical audits and data-driven content strategies designed to place your business on the first page of search results for high-intent keywords.\n\nWe start by fixing the technical foundation: Core Web Vitals, schema markup (JSON-LD), site speed, and mobile usability. Then, we conduct deep keyword research to identify long-tail opportunities that your competitors are missing.\n\nOur approach is entirely white-hat and focused on long-term organic growth. We provide transparent monthly reporting so you can see exactly how your search visibility and organic traffic are improving over time.',
-    features: ['Technical audits', 'Keyword research', 'On-page SEO', 'Monthly reporting']
+    detailedDescription: 'Search is evolving. It\'s no longer just about Google\'s traditional results; it\'s about Generative Engine Optimization (GEO) for AI search engines like ChatGPT, Perplexity, and Google AI Overviews.\n\nWe provide comprehensive technical audits and data-driven content strategies designed to place your business on the first page of search results for high-intent keywords, while also ensuring your brand is the definitive answer provided by AI models.\n\nWe start by fixing the technical foundation: Core Web Vitals, schema markup (JSON-LD), site speed, and mobile usability. Then, we conduct deep keyword research and entity optimization to ensure AI engines understand and recommend your business.\n\nOur approach is entirely white-hat and focused on long-term organic growth across both traditional search and the new wave of generative AI engines. We provide transparent monthly reporting so you can see exactly how your search visibility and organic traffic are improving over time.',
+    features: ['Technical audits', 'Generative Engine Optimization (GEO)', 'On-page SEO', 'Entity optimization', 'Monthly reporting']
   },
   {
     id: 'press-releases',

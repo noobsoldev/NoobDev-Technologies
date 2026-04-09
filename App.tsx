@@ -10,6 +10,7 @@ const Services = lazy(() => import('./pages/Services').then(module => ({ default
 const Showcase = lazy(() => import('./pages/Showcase').then(module => ({ default: module.Showcase })));
 const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
 const BlogPost = lazy(() => import('./pages/BlogPost').then(module => ({ default: module.BlogPost })));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail').then(module => ({ default: module.ServiceDetail })));
 const ProjectCaseStudy = lazy(() => import('./pages/ProjectCaseStudy').then(module => ({ default: module.ProjectCaseStudy })));
 const StartupPerks = lazy(() => import('./pages/StartupPerks').then(module => ({ default: module.StartupPerks })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
@@ -62,6 +63,7 @@ const AppContent = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/showcase" element={<Showcase />} />
             <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
             <Route path="/blog" element={<Blog />} />
