@@ -26,7 +26,7 @@ export const About = () => {
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
               <p>
-                We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noobdev was built to democratize <Link to="/services" className="text-[#FF0000] underline decoration-gray-300 hover:decoration-[#FF0000] transition-colors">high-end business automation</Link> for companies of all sizes. We are a no-code automation agency dedicated to your growth.
+                We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noob{`{Dev}`} Technologies was built to democratize <Link to="/services" className="text-[#FF0000] underline decoration-gray-300 hover:decoration-[#FF0000] transition-colors">high-end business automation</Link> for companies of all sizes. Based in Greater Noida, we are a no-code automation agency dedicated to your growth.
               </p>
               <p>
                 The gap between what modern software can do and how businesses actually use it is massive. Most teams are stuck doing repetitive work that an AI could handle in seconds.

@@ -106,7 +106,7 @@ export const Showcase = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6"><BraceWrap>Our Work</BraceWrap>: AI Automation & Web Development Projects</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Real results for real businesses. Browse our portfolio of automated success stories.</p>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Real results for real businesses. Browse our portfolio of automated success stories by Noob{`{Dev}`} Technologies, based in Greater Noida.</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-16">

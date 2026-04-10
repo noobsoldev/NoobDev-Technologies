@@ -83,7 +83,7 @@ export const Home = () => {
               <BraceWrap>Automate</BraceWrap> Your Business Without Writing Code
             </h1>
             <p className="text-xl text-gray-700 mb-10 leading-relaxed max-w-xl">
-              The no-code automation studio that connects your apps, automates workflows, and scales your operations — all without a single line of code. Looking to hire no-code developer India? We build your systems.
+              Noob{`{Dev}`} Technologies is a web development and no-code automation agency based in Greater Noida. We connect your apps, automate workflows, and scale small businesses — all without a single line of code.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 

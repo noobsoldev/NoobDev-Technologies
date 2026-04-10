@@ -28,6 +28,30 @@ const ScrollToTop = () => {
         window.history.replaceState(null, '', pathname);
       }
     }
+
+    const pageTitles: Record<string, string> = {
+      '/': 'Noob{Dev} Technologies | Web Development & Automation Agency in Greater Noida',
+      '/about': 'About Noob{Dev} Technologies | Greater Noida Automation Studio',
+      '/services': 'Services | No-Code Automation & Web Development | Noob{Dev}',
+      '/showcase': 'Portfolio | Salons, Optical Stores, Resorts | Noob{Dev}',
+      '/blog': 'Blog | Web Development & Automation Insights | Noob{Dev}',
+      '/perks': 'Startup Perks | Noob{Dev} Technologies',
+      '/contact': 'Contact Noob{Dev} Technologies | Greater Noida',
+    };
+
+    const pageDescriptions: Record<string, string> = {
+      '/': 'Noob{Dev} Technologies is a no-code automation and web development agency based in Greater Noida, India.',
+      '/about': 'Learn about Noob{Dev} Technologies — a solo-founder no-code automation and web development studio based in Greater Noida, India.',
+      '/services': 'No-code automation, AI workflows, CRM development, and web development services for small businesses in India by Noob{Dev} Technologies.',
+      '/showcase': 'Portfolio of web development and automation projects by Noob{Dev} Technologies — salons, optical stores, resorts, and SaaS products.',
+      '/blog': 'Insights on no-code automation, web development, and GEO for Indian small businesses by Noob{Dev} Technologies.',
+      '/perks': 'Exclusive startup perks and tools curated by Noob{Dev} Technologies for founders in India.',
+      '/contact': 'Get in touch with Noob{Dev} Technologies — web development and automation agency in Greater Noida, India.',
+    };
+
+    document.title = pageTitles[pathname] ?? pageTitles['/'];
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', pageDescriptions[pathname] ?? pageDescriptions['/']);
   }, [pathname, hash]);
 
   return null;

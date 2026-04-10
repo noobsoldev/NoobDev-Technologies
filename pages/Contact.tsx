@@ -66,7 +66,7 @@ export const Contact = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Let's <BraceWrap>Build</BraceWrap> Something</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Ready to automate your workflows? Send us a message and we'll get back to you within 24 hours.</p>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Ready to automate your workflows? Send a message to Noob{`{Dev}`} Technologies in Greater Noida and we'll get back to you within 24 hours.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">

@@ -19,7 +19,7 @@ export const Services = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Our <BraceWrap>Expertise</BraceWrap>: AI Automation & Web Development</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">From AI workflows to custom web development, we provide the technical foundation your business needs to scale without the friction of traditional coding.</p>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">From AI workflows to custom web development, Noob{`{Dev}`} Technologies provides the technical foundation your business needs to scale without the friction of traditional coding. Based in Greater Noida, we serve clients globally.</p>
         </div>
 
         {/* Services Hub */}
