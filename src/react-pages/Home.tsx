@@ -181,6 +181,9 @@ studio.deploy({
             <div>
               <h2 className="text-4xl font-bold mb-4">Expert <BraceWrap>Website Development</BraceWrap> & AI Automation</h2>
               <p className="text-gray-700 max-w-lg">Everything you need to automate, scale, and thrive in the modern digital economy with powerful AI workflow automation.</p>
+              <div className="mt-4 text-sm font-medium text-gray-500">
+                <p>How does AI automation save time for small businesses? We implement custom workflows that handle repetitive tasks 24/7.</p>
+              </div>
             </div>
             <Link 
                 to="/services"

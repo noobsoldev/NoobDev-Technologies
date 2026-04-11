@@ -1,8 +1,75 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Services } from '../../react-pages/Services';
+import Brace from '../../components/Brace.astro';
+import Terminal from '../../components/Terminal.astro';
+import CodeSnippet from '../../components/CodeSnippet.astro';
+import { SERVICES } from '../../constants';
+import { ServicesExplorer } from '../../react-components/ServicesExplorer';
+
+const faqs = [
+  {
+    q: "How much does custom business automation cost?",
+    a: "Pricing depends entirely on the complexity of the workflow. Simple Zapier integrations start around $499, while complex, multi-platform AI automation systems can range from $2,000 to $10,000+. We always provide a clear, fixed-price quote after our initial discovery call."
+  },
+  {
+    q: "Do I need to know how to code to manage these systems?",
+    a: "Not at all. Our entire philosophy is built around 'no-code' and 'low-code' handoffs. We build the complex architecture, but we deliver it with user-friendly dashboards and comprehensive video training so your team can manage day-to-day operations easily."
+  },
+  {
+    q: "What tools do you use for AI and automation?",
+    a: "We are tool-agnostic, meaning we use the best tool for your specific problem. Our stack frequently includes Make.com, Zapier, n8n, OpenAI (ChatGPT), Anthropic (Claude), Airtable, and custom Node.js scripts when APIs require heavy lifting."
+  },
+  {
+    q: "How long does it take to build a custom website or CRM?",
+    a: "High-converting landing pages can be deployed in 48-72 hours. Full custom web applications (React/Next.js) or comprehensive CRM setups (HubSpot/Salesforce) typically take between 4 to 8 weeks, depending on data migration needs and custom feature requirements."
+  },
+  {
+    q: "Will these automations break if an app updates?",
+    a: "APIs do change, which is why we build robust error handling into our workflows. If a connection drops, the system alerts us immediately. We also offer ongoing monthly maintenance retainers to ensure your automations run smoothly 24/7 without you having to worry about technical updates."
+  },
+  {
+    q: "Do you offer ongoing support after launch?",
+    a: "Yes. Every project includes a 30-day warranty period for bug fixes and minor adjustments. After that, we offer dedicated support and growth retainers for clients who want continuous optimization, SEO management, and new feature development."
+  }
+];
 ---
 
 <Layout title="Our Services | Noob{Dev} Technologies">
-  <Services client:load />
+  <div class="page-transition pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">Our <Brace>Expertise</Brace>: AI Automation & Web Development</h1>
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">From AI workflows to custom web development, Noob{`{Dev}`} Technologies provides the technical foundation your business needs to scale without the friction of traditional coding. Based in Greater Noida, we serve clients globally.</p>
+      </div>
+
+      {/* Services Explorer */}
+      <div class="mb-32">
+        <ServicesExplorer client:load services={SERVICES} />
+      </div>
+
+      {/* FAQ Section */}
+      <div class="mt-32 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Frequently Asked <Brace>Questions</Brace></h2>
+          <p class="text-xl text-gray-600">Everything you need to know about our services and process.</p>
+        </div>
+        
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="bg-white border border-gray-200 p-8 hover:border-[#FF0000] transition-colors">
+              <h3 class="text-xl font-bold mb-3 flex items-start">
+                <span class="text-[#FF0000] mr-3 mt-1 font-mono">Q.</span>
+                {faq.q}
+              </h3>
+              <p class="text-gray-700 leading-relaxed pl-8">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
 </Layout>
+

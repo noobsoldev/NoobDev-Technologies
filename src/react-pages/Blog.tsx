@@ -79,23 +79,8 @@ export const Blog = () => {
   const regularPosts = filteredPosts.slice(1);
 
   return (
-    <div className="page-transition pt-32 pb-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
-        <div className="mb-16">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="h-px w-12 bg-[#FF0000]"></div>
-            <span className="font-mono text-xs text-[#FF0000] uppercase tracking-widest">The Terminal Blog</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <BraceWrap>Insights</BraceWrap> & Updates: No-Code Automation Studio Blog
-          </h1>
-          <p className="text-xl text-gray-700 max-w-2xl leading-relaxed">
-            Deep dives into business automation, no-code architecture, and the future of work.
-          </p>
-        </div>
-
-        {featuredPost && (
+    <div className="pb-20 bg-white">
+      {featuredPost && (
           <div className="mb-24">
             <div className="group relative">
               <div className="absolute -inset-1 bg-[#FF0000] opacity-5 group-hover:opacity-10 transition-opacity"></div>
@@ -196,7 +181,6 @@ export const Blog = () => {
             </article>
           ))}
         </div>
-      </div>
     </div>
   );
 };

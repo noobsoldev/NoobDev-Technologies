@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BraceWrap } from '../react-components/Layout';
+import { BLOG_POSTS } from '../constants';
 
 export const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -9,14 +10,39 @@ export const BlogPost = () => {
   const [error, setError] = useState(false);
   const [newsletterState, setNewsletterState] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  useEffect(() => {
-    const title = slug ? slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : "Blog Post";
-    document.title = `${title} | Noob{dev} Blog`;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", `Read our latest insights on ${title.toLowerCase()} and business automation at Noob{dev} Technologies.`);
+  const post = BLOG_POSTS.find(p => p.slug === slug);
+
+  const articleSchema = post ? {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Noob{Dev} Technologies",
+      "url": "https://noobdev.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Noob{Dev} Technologies",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://noobdev.tech/favicon.svg"
+      }
     }
-  }, [slug]);
+  } : null;
+
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Noob{dev} Blog`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", post.excerpt);
+      }
+    }
+  }, [post]);
 
   const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -104,10 +130,32 @@ export const BlogPost = () => {
 
   return (
     <div className="page-transition pt-32 pb-20 bg-white">
+      {articleSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      )}
       <div className="max-w-3xl mx-auto px-6">
         <Link to="/blog" className="inline-block mb-12 text-xs font-mono font-bold uppercase tracking-widest text-gray-600 hover:text-[#FF0000] transition-colors">
           ← Back to Blog
         </Link>
+
+        {post && (
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="bg-gray-100 text-gray-600 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest">{post.category}</span>
+              <span className="text-gray-400 text-xs font-mono">{new Date(post.date).toLocaleDateString()}</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8">
+              {post.title}
+            </h1>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-[#FF0000] rounded-full flex items-center justify-center text-white font-bold text-xs">NB</div>
+              <div>
+                <div className="text-sm font-bold">Noob{`{Dev}`} Editorial</div>
+                <div className="text-xs text-gray-500 font-mono">{post.readTime}</div>
+              </div>
+            </div>
+          </div>
+        )}
 
         <article className="prose prose-lg prose-red max-w-none">
           <div 

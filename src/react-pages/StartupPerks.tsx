@@ -462,8 +462,11 @@ export const StartupPerks = () => {
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Startup <BraceWrap>Perks</BraceWrap>: Free Credits for AI Automation</h1>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Free Credits & Discounts for Startups</h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-10">
-            Discover over $1.5M in free cloud credits, AI API access, developer tools, and startup programs — all in one place.
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-6">
+            Discover over $1.5M in free cloud credits, AI API access, developer tools, and startup programs — all in one place. We've curated the best resources for founders to build their MVP and scale without burning through their initial capital.
+          </p>
+          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10">
+            From Google Cloud and AWS Activate to OpenAI and Anthropic credits, these programs are designed to give your startup the technical leverage it needs. At Noob{`{Dev}`} Technologies, we help our clients navigate these offerings to ensure they are using the right stack for their specific AI and automation needs.
           </p>
 
           {/* Stat Badges */}

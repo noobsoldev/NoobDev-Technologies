@@ -1,8 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Brace from '../../components/Brace.astro';
 import { Showcase } from '../../react-pages/Showcase';
 ---
 
-<Layout title="Showcase | Noob{Dev} Technologies">
-  <Showcase client:load />
+<Layout 
+  title="Showcase | Noob{Dev} Technologies"
+  description="Real results for real businesses. Browse our portfolio of automated success stories by Noob{Dev} Technologies, based in Greater Noida."
+>
+  <div class="page-transition pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6"><Brace>Our Work</Brace>: AI Automation & Web Development Projects</h1>
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">Real results for real businesses. Browse our portfolio of automated success stories by Noob{`{Dev}`} Technologies, based in Greater Noida.</p>
+      </div>
+
+      <Showcase client:load />
+    </div>
+  </div>
 </Layout>
+

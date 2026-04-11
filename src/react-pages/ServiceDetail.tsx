@@ -10,6 +10,30 @@ export const ServiceDetail = () => {
   
   const service = SERVICES.find(s => s.id === slug);
 
+  const serviceSchema = service ? {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Noob{Dev} Technologies",
+      "url": "https://noobdev.tech"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": service.title,
+      "itemListElement": service.features?.map((f, i) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": f
+        }
+      }))
+    }
+  } : null;
+
   useEffect(() => {
     if (service) {
       document.title = `${service.title} | Noob{dev} Technologies`;
@@ -48,6 +72,9 @@ export const ServiceDetail = () => {
 
   return (
     <div className="page-transition pt-32 pb-20 bg-white">
+      {serviceSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      )}
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Breadcrumb */}
@@ -60,10 +87,11 @@ export const ServiceDetail = () => {
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
           <div>
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-5xl font-mono text-[#FF0000]">{service.icon}</span>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                <BraceWrap>{service.title.split(' ')[0]}</BraceWrap> {service.title.split(' ').slice(1).join(' ')}
+            <div className="flex flex-col gap-4 mb-8">
+              <span className="text-6xl font-mono text-[#FF0000] mb-2">{service.icon}</span>
+              <h1 className="text-6xl md:text-9xl font-bold leading-[0.8] tracking-tighter mb-8">
+                <span className="text-[#FF0000] block mb-2">{service.title.split(' ')[0]}</span>
+                <span className="text-black">{service.title.split(' ').slice(1).join(' ')}</span>
               </h1>
             </div>
             <p className="text-2xl text-gray-700 leading-relaxed border-l-4 border-[#FF0000] pl-6 py-2">
@@ -112,7 +140,7 @@ export const ServiceDetail = () => {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start text-gray-800 font-medium">
-                        <span className="text-[#FF0000] mr-3 font-mono mt-0.5">{"[x]"}</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FF0000] mr-4 mt-2 shrink-0"></span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -136,17 +164,17 @@ export const ServiceDetail = () => {
 
               {/* Pricing & Timeline */}
               {(service.pricing || service.timeline) && (
-                <div className="grid grid-cols-2 gap-4 border-t border-gray-200 pt-8">
+                <div className="flex gap-12">
                   {service.pricing && (
                     <div>
-                      <div className="text-xs font-mono text-gray-500 uppercase mb-1">Investment</div>
-                      <div className="text-lg font-bold text-black">{service.pricing}</div>
+                      <div className="text-[10px] font-mono text-gray-400 uppercase tracking-widest mb-2">Investment</div>
+                      <div className="text-2xl font-bold text-black">{service.pricing}</div>
                     </div>
                   )}
                   {service.timeline && (
                     <div>
-                      <div className="text-xs font-mono text-gray-500 uppercase mb-1">Timeline</div>
-                      <div className="text-lg font-bold text-black">{service.timeline}</div>
+                      <div className="text-[10px] font-mono text-gray-400 uppercase tracking-widest mb-2">Timeline</div>
+                      <div className="text-2xl font-bold text-black">{service.timeline}</div>
                     </div>
                   )}
                 </div>

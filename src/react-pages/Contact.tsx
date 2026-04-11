@@ -66,7 +66,12 @@ export const Contact = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Let's <BraceWrap>Build</BraceWrap> Something</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Ready to automate your workflows? Send a message to Noob{`{Dev}`} Technologies in Greater Noida and we'll get back to you within 24 hours.</p>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-6">
+            Ready to automate your workflows? Send a message to Noob{`{Dev}`} Technologies in Greater Noida and we'll get back to you within 24 hours. Whether you're looking for a custom website, AI-driven automation, or a complete digital transformation, our team is here to help you scale efficiently.
+          </p>
+          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            We specialize in connecting fragmented software ecosystems using tools like Make.com, Zapier, and custom APIs. Our goal is to eliminate the manual friction in your business so you can focus on high-level strategy and growth. From local businesses in India to global enterprises, we provide the technical backbone for modern operations.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">

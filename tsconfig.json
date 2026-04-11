@@ -21,6 +21,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "react-router-dom": [
+        "./src/react-router-shim.tsx"
       ]
     },
     "allowImportingTsExtensions": true,

@@ -15,9 +15,9 @@ export const Logo = ({ className = "" }: { className?: string }) => (
 // Fix: Make children optional to resolve "Property 'children' is missing in type '{}' but required" errors in JSX
 export const BraceWrap = ({ children, className = "" }: { children?: React.ReactNode, className?: string }) => (
   <span className={className}>
-    <span className="text-[#FF0000] font-mono">{"{"}</span>
+    <span className="text-[#FF0000]/40 font-mono text-[0.8em]">{"{"}</span>
     {children}
-    <span className="text-[#FF0000] font-mono">{"}"}</span>
+    <span className="text-[#FF0000]/40 font-mono text-[0.8em]">{"}"}</span>
   </span>
 );
 
