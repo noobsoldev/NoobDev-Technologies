@@ -217,5 +217,36 @@ export const CASE_STUDIES: Record<string, CaseStudy> = {
       'Seamless integration of WhatsApp for instant customer communication.'
     ],
     techStack: ['React', 'Tailwind CSS', 'Framer Motion', 'WhatsApp Business API']
+  },
+  'aqua-republik': {
+    slug: 'aqua-republik',
+    clientName: 'Aqua Republik',
+    tagline: 'Hyperlocal RO Service Optimization in Crossing Republik',
+    liveUrl: 'https://aquarepublik.in/',
+    seo: {
+      title: 'Aqua Republik Case Study | RO Service Web Development | Noob{dev}',
+      description: 'How Noob{dev} built Aqua Republik, the #1 RO water purifier service website in Crossing Republik, Ghaziabad, focusing on hyperlocal SEO and same-day service conversions.',
+      keywords: 'RO repair Crossing Republik, RO installation Ghaziabad, water purifier service Gaur City, hyperlocal SEO case study, Noob{dev} technologies'
+    },
+    story: {
+      hook: 'A local RO service provider was losing customers to generic aggregators because they lacked a professional digital presence that established trust and local authority.',
+      context: 'Aqua Republik is a hyperlocal service business providing RO water purifier repair, installation, and AMC services in Crossing Republik, Ghaziabad, and surrounding areas like Gaur City.',
+      problemDepth: 'In the home service industry, trust and speed are everything. Customers searching for "RO repair near me" need instant contact options and proof of local reliability. The client needed a website that wasn\'t just a digital business card, but a conversion machine that could handle same-day service requests and establish them as the #1 choice in their specific neighborhood.',
+      strategicThinking: 'We focused on a "Hyperlocal Authority" strategy. Instead of targeting broad terms, we optimized every element for Crossing Republik and specific high-rise societies. The goal was to make Aqua Republik the definitive answer for any water purification query in their 5km service radius.',
+      execution: 'We built a lightning-fast, mobile-first landing page optimized for "Click-to-Call" and "WhatsApp" conversions. We implemented local schema markup (JSON-LD) to help search engines and AI models identify their exact service area. The design emphasizes "Same-Day Service" and "Genuine Parts" to address the primary pain points of their target audience.',
+      outcome: 'The results were immediate. By dominating local search intent, Aqua Republik saw a 150% increase in direct service inquiries within the first month. The site now ranks #1 for "RO service Crossing Republik" and has significantly reduced their reliance on expensive third-party lead generation platforms.'
+    },
+    keyTakeaways: [
+      'Hyperlocal SEO is more effective than broad targeting for service-based businesses.',
+      'Mobile-first design with prominent CTAs (Call/WhatsApp) is critical for emergency home services.',
+      'Establishing local trust through specific neighborhood mentions and society-level targeting drives higher conversion rates.'
+    ],
+    whoIsThisFor: 'Local service providers, home maintenance businesses, and neighborhood-specific brands looking to dominate their local market through SEO and GEO.',
+    successFactors: [
+      'Deeply optimized hyperlocal SEO strategy.',
+      'Frictionless conversion paths for mobile users.',
+      'Strategic use of local trust signals and neighborhood-specific content.'
+    ],
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'JSON-LD LocalBusiness Schema', 'WhatsApp Integration']
   }
 };

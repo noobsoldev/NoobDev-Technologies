@@ -35,4 +35,28 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <!-- Services -->
+  <url><loc>https://noobdev.tech/services/ai-automation</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/landing-pages</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/custom-websites</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/seo</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/geo</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/press-releases</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/crm-setup</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/openclaw-bots</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/services/process-automation</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <!-- Projects -->
+  <url><loc>https://noobdev.tech/projects/vibenote-studio</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/optiofy</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/lenswala</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/akansha-rajput</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/green-river-camp</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/exponential-coin</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/shri-ji-jewellers</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/projects/aqua-republik</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Blog Posts -->
+  <url><loc>https://noobdev.tech/blog/seo-vs-geo-ai-search</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/blog/automate-shopify-fulfillment-zapier-make</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/blog/cost-custom-healthcare-crm-2026</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://noobdev.tech/blog/headless-ecommerce-vs-traditional-shopify</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>

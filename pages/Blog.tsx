@@ -30,6 +30,16 @@ export const Blog = () => {
   // Static list of posts - update this array when adding new HTML files to /public/blog/
   const posts: BlogPost[] = [
     {
+      id: '0',
+      title: 'SEO vs. GEO: Why Your Business Needs Both in the Age of AI',
+      slug: 'seo-vs-geo-ai-search',
+      date: '2026-04-10',
+      category: 'Strategy',
+      excerpt: 'Is traditional SEO dead? We explore the rise of Generative Engine Optimization (GEO) and how to optimize your brand for ChatGPT, Gemini, and Claude.',
+      readTime: '10 min read',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80'
+    },
+    {
       id: '1',
       title: 'How to Automate Shopify Order Fulfillment with Zapier and Make.com',
       slug: 'automate-shopify-fulfillment-zapier-make',

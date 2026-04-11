@@ -12,11 +12,20 @@ export const ServiceDetail = () => {
 
   useEffect(() => {
     if (service) {
-      document.title = `${service.title} | Noob{dev}`;
+      document.title = `${service.title} | Noob{dev} Technologies`;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.setAttribute("content", service.description);
       }
+      
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.setAttribute('name', 'keywords');
+        document.head.appendChild(metaKeywords);
+      }
+      const keywords = `${service.title.toLowerCase()}, noobdev, web development Greater Noida, automation agency, ${service.tools?.join(', ') || ''}`;
+      metaKeywords.setAttribute("content", keywords);
     } else {
       navigate('/not-found', { replace: true });
     }

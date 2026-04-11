@@ -49,9 +49,11 @@ const ScrollToTop = () => {
       '/contact': 'Get in touch with Noob{Dev} Technologies — web development and automation agency in Greater Noida, India.',
     };
 
-    document.title = pageTitles[pathname] ?? pageTitles['/'];
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', pageDescriptions[pathname] ?? pageDescriptions['/']);
+    if (pageTitles[pathname]) {
+      document.title = pageTitles[pathname];
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', pageDescriptions[pathname]);
+    }
   }, [pathname, hash]);
 
   return null;

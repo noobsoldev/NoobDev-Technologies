@@ -10,12 +10,13 @@ export const BlogPost = () => {
   const [newsletterState, setNewsletterState] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   useEffect(() => {
-    document.title = "Blog Post | Noob{dev}";
+    const title = slug ? slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : "Blog Post";
+    document.title = `${title} | Noob{dev} Blog`;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Read the full article on Noobdev's blog.");
+      metaDesc.setAttribute("content", `Read our latest insights on ${title.toLowerCase()} and business automation at Noob{dev} Technologies.`);
     }
-  }, []);
+  }, [slug]);
 
   const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

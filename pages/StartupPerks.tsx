@@ -543,6 +543,55 @@ export const StartupPerks = () => {
           </div>
         )}
 
+        {/* FAQ Section */}
+        <div className="mt-32 max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <BraceWrap>FAQ</BraceWrap>: Common Questions
+            </h2>
+            <p className="text-gray-600 font-mono uppercase tracking-widest text-sm">Everything you need to know about startup programs</p>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: "How do I qualify for these startup credits?",
+                a: "Most programs require you to be a new customer, have a company website, and often be associated with a VC, accelerator, or incubator. However, programs like Microsoft Founders Hub and AWS Activate Founders are open to self-funded startups as well."
+              },
+              {
+                q: "Can I apply for multiple cloud programs at once?",
+                a: "Yes, you can apply for Google Cloud, AWS, and Azure simultaneously. However, most startups choose one primary infrastructure provider to avoid architectural complexity, while using secondary providers for specific AI or database services."
+              },
+              {
+                q: "What happens after the credits expire?",
+                a: "Once your credits expire (usually after 1-2 years) or are fully consumed, you will be transitioned to standard pay-as-you-go pricing. It's critical to architect your app efficiently from day one to avoid a massive 'bill shock' later."
+              },
+              {
+                q: "Do I need to be incorporated to apply?",
+                a: "For major cloud providers, yes. They typically require a business email and proof of incorporation (like a Delaware C-Corp or Indian Pvt Ltd). For smaller tools and AI APIs, you can often start as an individual and upgrade later."
+              },
+              {
+                q: "How long does the approval process take?",
+                a: "Approval times vary. AI-focused programs (like OpenAI or Anthropic) can take 2-4 weeks due to high demand. Cloud infrastructure programs usually respond within 3-7 business days."
+              },
+              {
+                q: "Can Noob{dev} help me apply for these?",
+                a: "While we don't handle the application itself, we help our clients architect their products to meet the technical requirements of these programs and ensure the credits are utilized effectively without waste."
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="border-b border-gray-100 pb-6 group">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-[#FF0000] transition-colors flex items-start">
+                  <span className="text-[#FF0000] mr-4 font-mono">0{idx + 1}.</span>
+                  {faq.q}
+                </h3>
+                <p className="text-gray-700 leading-relaxed pl-10">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="mt-24 bg-gray-50 border border-gray-200 p-12 text-center rounded-2xl">
           <h2 className="text-3xl font-bold mb-4">Need help implementing these tools?</h2>

@@ -22,6 +22,8 @@ export interface Project {
   metric: string;
   image: string;
   link?: string;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export interface CaseStudy {

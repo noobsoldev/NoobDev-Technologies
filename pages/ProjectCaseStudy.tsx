@@ -11,10 +11,10 @@ export const ProjectCaseStudy = () => {
 
   useEffect(() => {
     if (caseStudy) {
-      document.title = caseStudy.seo.title;
+      document.title = projectInfo?.seoTitle || caseStudy.seo.title;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
-        metaDesc.setAttribute("content", caseStudy.seo.description);
+        metaDesc.setAttribute("content", projectInfo?.seoDescription || caseStudy.seo.description);
       }
       
       let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -34,8 +34,8 @@ export const ProjectCaseStudy = () => {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": caseStudy.seo.title,
-    "description": caseStudy.seo.description,
+    "headline": projectInfo?.seoTitle || caseStudy.seo.title,
+    "description": projectInfo?.seoDescription || caseStudy.seo.description,
     "image": projectInfo.image,
     "author": {
       "@type": "Organization",
@@ -108,9 +108,9 @@ export const ProjectCaseStudy = () => {
           </div>
         </div>
 
-        {/* Live Preview Iframe */}
+        {/* Live Preview Screenshot */}
         <div className="mb-24">
-          <div className="rounded-xl overflow-hidden border border-gray-200 shadow-2xl bg-white">
+          <div className="rounded-xl overflow-hidden border border-gray-200 shadow-2xl bg-white group relative">
             {/* Browser Mockup Header */}
             <div className="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center space-x-2">
               <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
@@ -121,18 +121,26 @@ export const ProjectCaseStudy = () => {
               </div>
               <div className="w-16"></div>
             </div>
-            <div className="relative w-full aspect-video bg-gray-50">
-              <iframe 
-                src={caseStudy.liveUrl} 
-                title={`${caseStudy.clientName} Live Preview`}
-                className="absolute top-0 left-0 w-full h-full border-none pointer-events-none"
+            <div className="relative w-full aspect-video bg-gray-50 overflow-hidden">
+              <img 
+                src={projectInfo.image} 
+                alt={`${caseStudy.clientName} Website Preview`}
+                className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
                 loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
               />
-              <div className="absolute inset-0 bg-transparent z-10" aria-hidden="true"></div>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                <a 
+                  href={caseStudy.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-black px-8 py-4 font-bold rounded-lg hover:bg-[#FF0000] hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300"
+                >
+                  Visit Live Website ↗
+                </a>
+              </div>
             </div>
           </div>
-          <p className="text-center text-xs text-gray-400 mt-4 font-mono">Live preview of the actual website</p>
+          <p className="text-center text-xs text-gray-400 mt-4 font-mono">High-resolution preview of the actual website</p>
         </div>
 
         {/* Content Grid */}

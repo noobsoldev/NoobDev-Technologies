@@ -269,16 +269,43 @@ studio.deploy({
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Sarah Chen', role: 'COO, TechFlow', text: "Noob{dev} completely transformed our onboarding process. We save 15 hours a week per account manager." },
-              { name: 'Marcus Bell', role: 'Founder, RetailScale', text: "The ROI was immediate. Their AI automation handles our inventory updates perfectly." },
-              { name: 'Elena Rodriguez', role: 'Director, MediaForge', text: "Cleanest integration we've ever seen. No more manual data entry between our CRM and Notion." },
+              { 
+                name: 'VibeNote Studio', 
+                role: 'AI SaaS Platform', 
+                text: "The AI website generator transformed our agency's workflow. We now deliver high-quality sites in minutes, not weeks. Prototyping time is down by 85%." 
+              },
+              { 
+                name: 'Optiofy', 
+                role: 'Healthcare CRM', 
+                text: "Noob{dev} built a robust billing system that our clinic relies on daily. It completely eliminated transcription errors and saved our staff 15 hours a week." 
+              },
+              { 
+                name: 'Aqua Republik', 
+                role: 'RO Service Provider', 
+                text: "Dominating local search in Crossing Republik was our goal, and Noob{dev} delivered. Our direct service inquiries increased by 150% in the first month." 
+              },
+              { 
+                name: 'Lenswala', 
+                role: 'E-commerce Retailer', 
+                text: "Our online presence now matches the premium quality of our eyewear. The new headless architecture skyrocketed our mobile conversion rates by 45%." 
+              },
+              { 
+                name: 'Akansha Rajput', 
+                role: 'Creative Professional', 
+                text: "The new portfolio acts as a powerful lead generation tool. I've seen a 60% increase in inbound inquiries from high-ticket clients since the launch." 
+              },
+              { 
+                name: 'Green River Camp', 
+                role: 'Nature Retreat', 
+                text: "Direct reservations increased by 120% in the first season, saving us over $15,000 in OTA commission fees. The booking engine is flawless." 
+              },
             ].map((t, idx) => (
-              <div key={idx} className="bg-[#111] p-10 border border-gray-800 relative">
+              <div key={idx} className="bg-[#111] p-10 border border-gray-800 relative hover:border-[#FF0000] transition-colors group">
                 <div className="text-4xl text-[#FF0000] font-mono mb-6 leading-none">"</div>
-                <p className="text-gray-500 mb-8 italic leading-relaxed">{t.text}</p>
+                <p className="text-gray-400 mb-8 italic leading-relaxed group-hover:text-gray-200 transition-colors">{t.text}</p>
                 <div>
-                  <div className="font-bold text-lg">{t.name}</div>
-                  <div className="text-sm font-mono text-[#FF0000]">{t.role}</div>
+                  <div className="font-bold text-lg group-hover:text-[#FF0000] transition-colors">{t.name}</div>
+                  <div className="text-sm font-mono text-gray-500">{t.role}</div>
                 </div>
               </div>
             ))}
