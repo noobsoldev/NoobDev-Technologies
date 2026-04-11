@@ -1,0 +1,86 @@
+---
+import '../index.css';
+import { Navbar, Footer } from '../react-components/Layout';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { 
+  title = "Noob{Dev} Technologies | Web Development & Automation Agency in Greater Noida",
+  description = "No-code automation and web development agency based in Greater Noida, India. We build websites for salons, optical stores, resorts, and small businesses — and automate their operations using Make.com, Supabase, and AI workflows.",
+  ogImage = "https://noobdev.tech/og-image.jpg"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <meta name="keywords" content="web development agency Greater Noida, automation agency India, website for salon India, website for optical store India, no-code automation small business India">
+    <meta name="author" content="Noob{Dev} Technologies">
+    <meta name="theme-color" content="#FF0000">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href={Astro.url}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={Astro.url}>
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src * data: blob:; connect-src * https://www.google-analytics.com;">
+    <title>{title}</title>
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Preload critical font -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZhrib2Bg-4.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Optimized Google Fonts Loading -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&family=Poppins:wght@700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Delayed Google Tag Manager -->
+    <script is:inline>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-D6CP5JFSYV';
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-D6CP5JFSYV');
+        }, 3000); // Delay GTM by 3 seconds to prioritize LCP
+      });
+    </script>
+    
+    <script is:inline>window.process = { env: {} };</script>
+</head>
+<body class="bg-white text-black font-sans selection:bg-[#FF0000] selection:text-white">
+    <Navbar client:load />
+    <main>
+        <slot />
+    </main>
+    <Footer />
+</body>
+</html>

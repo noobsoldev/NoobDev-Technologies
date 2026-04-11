@@ -52,6 +52,7 @@ export interface CaseStudy {
 
 export interface BlogPost {
   id: number;
+  slug: string;
   title: string;
   category: string;
   date: string;

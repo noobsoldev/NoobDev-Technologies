@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ServiceDetail } from '../../react-pages/ServiceDetail';
+import { SERVICES } from '../../constants';
+
+export function getStaticPaths() {
+  return SERVICES.map(service => ({
+    params: { id: service.id },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.title} | Noob{Dev} Technologies`} description={service.description}>
+  <ServiceDetail client:load />
+</Layout>

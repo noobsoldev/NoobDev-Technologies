@@ -1,4 +1,4 @@
-import { CaseStudy } from '../../types';
+import { CaseStudy } from '../types';
 
 export const CASE_STUDIES: Record<string, CaseStudy> = {
   'vibenote-studio': {

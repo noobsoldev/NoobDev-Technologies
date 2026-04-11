@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { BlogPost } from '../../react-pages/BlogPost';
+import { BLOG_POSTS } from '../../constants';
+
+export function getStaticPaths() {
+  return BLOG_POSTS.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} | Noob{Dev} Blog`} description={post.excerpt}>
+  <BlogPost client:load />
+</Layout>
