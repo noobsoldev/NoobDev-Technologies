@@ -1,3 +1,25 @@
+# --- BEGIN BOT PROTECTION BYPASS ---
+# Whitelist trusted search engine and AI crawlers to bypass Hostinger/ModSecurity challenges
+<IfModule mod_security2.c>
+    SecRule REQUEST_HEADERS:User-Agent "@pm Googlebot Bingbot DuckDuckBot Applebot GPTBot ClaudeBot PerplexityBot" "id:100001,phase:1,pass,nolog,ctl:ruleEngine=Off"
+</IfModule>
+
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase User-Agent "Googlebot" trusted_bot
+    SetEnvIfNoCase User-Agent "Bingbot" trusted_bot
+    SetEnvIfNoCase User-Agent "DuckDuckBot" trusted_bot
+    SetEnvIfNoCase User-Agent "Applebot" trusted_bot
+    SetEnvIfNoCase User-Agent "GPTBot" trusted_bot
+    SetEnvIfNoCase User-Agent "ClaudeBot" trusted_bot
+    SetEnvIfNoCase User-Agent "PerplexityBot" trusted_bot
+
+    # Allow access and skip challenges for trusted bots
+    Order Allow,Deny
+    Allow from all
+    Allow from env=trusted_bot
+</IfModule>
+# --- END BOT PROTECTION BYPASS ---
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
