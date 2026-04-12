@@ -18,8 +18,8 @@ export const Services = () => {
     <div className="page-transition pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">Our <BraceWrap>Expertise</BraceWrap>: AI Automation & Web Development</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">From AI workflows to custom web development, Noob{`{Dev}`} Technologies provides the technical foundation your business needs to scale without the friction of traditional coding. Based in Greater Noida, we serve clients globally.</p>
+          <h1 className="mb-6">Our <BraceWrap>Expertise</BraceWrap>: AI Automation & Web Development</h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-0">From AI workflows to custom web development, Noob{`{Dev}`} Technologies provides the technical foundation your business needs to scale without the friction of traditional coding. We serve clients globally.</p>
         </div>
 
         {/* Services Hub */}

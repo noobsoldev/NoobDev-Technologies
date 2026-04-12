@@ -89,12 +89,12 @@ export const ServiceDetail = () => {
           <div>
             <div className="flex flex-col gap-4 mb-8">
               <span className="text-6xl font-mono text-[#FF0000] mb-2">{service.icon}</span>
-              <h1 className="text-6xl md:text-9xl font-bold leading-[0.8] tracking-tighter mb-8">
+              <h1 className="text-5xl md:text-7xl font-bold leading-[0.9] tracking-tighter mb-8">
                 <span className="text-[#FF0000] block mb-2">{service.title.split(' ')[0]}</span>
                 <span className="text-black">{service.title.split(' ').slice(1).join(' ')}</span>
               </h1>
             </div>
-            <p className="text-2xl text-gray-700 leading-relaxed border-l-4 border-[#FF0000] pl-6 py-2">
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed border-l-4 border-[#FF0000] pl-6 py-2 mb-0">
               {service.description}
             </p>
           </div>

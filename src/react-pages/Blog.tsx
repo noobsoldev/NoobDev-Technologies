@@ -81,9 +81,9 @@ export const Blog = () => {
   return (
     <div className="pb-20 bg-white">
       {featuredPost && (
-          <div className="mb-24">
+          <div className="mb-32">
             <div className="group relative">
-              <div className="absolute -inset-1 bg-[#FF0000] opacity-5 group-hover:opacity-10 transition-opacity"></div>
+              <div className="absolute -inset-2 bg-[#FF0000] opacity-5 group-hover:opacity-10 transition-opacity"></div>
               <div className="relative bg-white border border-gray-100 flex flex-col lg:flex-row items-stretch overflow-hidden">
                 <div className="lg:w-1/2 h-80 lg:h-auto overflow-hidden">
                   <img 
@@ -96,22 +96,22 @@ export const Blog = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
-                <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="bg-[#FF0000] text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest">Featured</span>
-                    <span className="text-gray-600 text-xs font-mono">{new Date(featuredPost.date).toLocaleDateString()}</span>
+                <div className="lg:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-8">
+                    <span className="bg-[#FF0000] text-white px-3 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.2em]">Featured</span>
+                    <span className="text-gray-400 text-[11px] font-mono uppercase tracking-widest">{new Date(featuredPost.date).toLocaleDateString()}</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 group-hover:text-[#FF0000] transition-colors">
+                  <h2 className="group-hover:text-[#FF0000] transition-colors mb-6">
                     {featuredPost.title}
                   </h2>
-                  <p className="text-gray-700 mb-8 text-lg leading-relaxed line-clamp-3">
+                  <p className="text-gray-600 mb-10 text-lg leading-relaxed line-clamp-3">
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <Link to={`/blog/${featuredPost.slug}`} className="text-sm font-bold border-b-2 border-[#FF0000] pb-1 hover:text-[#FF0000] transition-colors">
+                    <Link to={`/blog/${featuredPost.slug}`} className="text-sm font-semibold border-b-2 border-[#FF0000] pb-1 hover:text-[#FF0000] transition-colors uppercase tracking-widest">
                       Read the Full Article →
                     </Link>
-                    <span className="text-gray-500 text-xs font-mono tracking-tighter">[{featuredPost.readTime}]</span>
+                    <span className="text-gray-400 text-[10px] font-mono tracking-widest uppercase">[{featuredPost.readTime}]</span>
                   </div>
                 </div>
               </div>
@@ -120,16 +120,16 @@ export const Blog = () => {
         )}
 
         {/* Filter Bar */}
-        <div className="flex flex-wrap items-center gap-4 mb-16 pb-6 border-b border-gray-100">
-          <span className="text-xs font-mono text-gray-500 uppercase mr-4">Filter:</span>
+        <div className="flex flex-wrap items-center gap-6 mb-20 pb-8 border-b border-gray-100">
+          <span className="text-[10px] font-mono text-gray-400 uppercase tracking-[0.2em] mr-4 font-semibold">Filter:</span>
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-sm font-mono px-4 py-2 transition-all ${
+              className={`text-[11px] font-mono px-6 py-3 transition-all uppercase tracking-widest ${
                 activeCategory === cat 
-                ? 'bg-black text-white' 
-                : 'text-gray-500 hover:text-black hover:bg-gray-100'
+                ? 'bg-black text-white font-semibold' 
+                : 'text-gray-400 hover:text-black hover:bg-gray-50'
               }`}
             >
               {activeCategory === cat ? `{${cat}}` : cat}
@@ -138,10 +138,10 @@ export const Blog = () => {
         </div>
 
         {/* Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
           {regularPosts.map((post, idx) => (
             <article key={post.id} className="flex flex-col group">
-              <div className="relative h-60 mb-8 overflow-hidden bg-gray-100">
+              <div className="relative h-64 mb-10 overflow-hidden bg-gray-50">
                 <img 
                   src={post.image} 
                   alt={`${post.title} blog post`} 
@@ -149,15 +149,15 @@ export const Blog = () => {
                   height="240"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
                 />
-                <div className="absolute bottom-0 left-0 bg-white px-4 py-2 font-mono text-[10px] font-bold text-[#FF0000] border-t border-r border-gray-100">
+                <div className="absolute bottom-0 left-0 bg-white px-5 py-2.5 font-mono text-[10px] font-semibold text-[#FF0000] border-t border-r border-gray-100 uppercase tracking-[0.2em]">
                   {post.category.toUpperCase()}
                 </div>
               </div>
               
-              <div className="flex-1 flex gap-6">
-                <div className="flex flex-col text-[10px] font-mono text-gray-500 pt-1 select-none">
+              <div className="flex-1 flex gap-8">
+                <div className="flex flex-col text-[10px] font-mono text-gray-300 pt-1 select-none font-semibold">
                   <span>01</span>
                   <span>02</span>
                   <span>03</span>
@@ -166,15 +166,15 @@ export const Blog = () => {
                 </div>
                 
                 <div className="flex-1">
-                  <div className="text-[10px] font-mono text-gray-500 mb-2">{new Date(post.date).toLocaleDateString()} — {post.readTime}</div>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF0000] transition-colors leading-tight">
+                  <div className="text-[10px] font-mono text-gray-400 mb-3 uppercase tracking-widest">{new Date(post.date).toLocaleDateString()} | {post.readTime}</div>
+                  <h3 className="mb-5 group-hover:text-[#FF0000] transition-colors leading-tight text-xl">
                     {post.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6">
+                  <p className="text-gray-600 text-[15px] leading-relaxed line-clamp-3 mb-8">
                     {post.excerpt}
                   </p>
-                  <Link to={`/blog/${post.slug}`} className="text-xs font-bold font-mono uppercase tracking-widest flex items-center group-hover:translate-x-1 transition-transform">
-                    View Post <span className="ml-2 text-[#FF0000]">→</span>
+                  <Link to={`/blog/${post.slug}`} className="text-[11px] font-semibold font-mono uppercase tracking-[0.2em] flex items-center group-hover:translate-x-2 transition-transform">
+                    View Post <span className="ml-3 text-[#FF0000]">→</span>
                   </Link>
                 </div>
               </div>

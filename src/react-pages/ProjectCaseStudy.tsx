@@ -37,6 +37,7 @@ export const ProjectCaseStudy = () => {
     "headline": projectInfo?.seoTitle || caseStudy.seo.title,
     "description": projectInfo?.seoDescription || caseStudy.seo.description,
     "image": projectInfo.image,
+    "datePublished": "2026-04-10T08:00:00Z",
     "author": {
       "@type": "Organization",
       "name": "Noobdev"
@@ -82,10 +83,10 @@ export const ProjectCaseStudy = () => {
           <div className="inline-block bg-gray-100 px-3 py-1 text-xs font-mono mb-6 border-l-2 border-[#FF0000] uppercase tracking-widest">
             Case Study // {projectInfo.industry}
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="mb-6 leading-tight">
             {caseStudy.clientName}
           </h1>
-          <p className="text-2xl text-gray-700 mb-10 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed mb-0">
             {caseStudy.tagline}
           </p>
           <div className="flex flex-wrap justify-center gap-4">

@@ -22,10 +22,10 @@ export const Initiative = () => {
           <div className="inline-block bg-[#FF0000]/10 text-[#FF0000] border border-[#FF0000]/20 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide mb-8">
             LIMITED TO 100 BUSINESSES
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+          <h1 className="mb-8 leading-[1.1]">
             Get Your Business Online with a System That <span className="text-[#FF0000]">Actually Brings Leads</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
             We are onboarding 100 businesses to build high-converting websites and automation systems <strong className="text-white">without agency overhead</strong>. The smartest <strong className="text-white">website development for local business</strong> in India.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

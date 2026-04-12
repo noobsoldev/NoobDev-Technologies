@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { NotFound } from '../react-pages/NotFound';
+
+const title = "404 Not Found | NoobDev Technologies";
+const description = "The page you are looking for does not exist.";
 ---
 
-<Layout title="404 Not Found | Noob{Dev} Technologies">
-  <NotFound client:load />
+<Layout title={title} description={description}>
+  <NotFound client:idle />
 </Layout>

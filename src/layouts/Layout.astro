@@ -2,20 +2,37 @@
 import '../index.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/fira-code/400.css';
+import '@fontsource/fira-code/500.css';
 
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
   ogImage?: string;
   canonicalURL?: string;
+  breadcrumb?: { name: string, item: string }[];
+  faqs?: { question: string, answer: string }[];
 }
 
 const { 
-  title = "Noob{Dev} Technologies | Web Development & Automation Agency",
-  description = "No-code automation and web development agency based in Greater Noida, India. We build websites for salons, optical stores, resorts, and small businesses — and automate their operations using Make.com, Supabase, and AI workflows.",
-  ogImage = "https://noobdev.tech/og-image.jpg",
-  canonicalURL = Astro.url.href
+  title = "Noob{Dev} Technologies | Websites & Automation Systems That Help Your Business Grow Faster",
+  description = "Noob{Dev} Technologies is a global no-code automation studio. We build high-performance websites and automate business workflows using AI for businesses worldwide.",
+  keywords = "web development agency Greater Noida, automation agency India, website for salon India, website for optical store India, no-code automation small business India",
+  ogImage = "https://raw.githubusercontent.com/noobsoldev/NoobDev-Technologies-/main/Screenshot%202026-04-12%20050202.png",
+  canonicalURL = Astro.url.href,
+  breadcrumb = [],
+  faqs = []
 } = Astro.props;
+
+const defaultBreadcrumbs = [
+  { name: "Home", item: "https://noobdev.tech" },
+  ...breadcrumb
+];
 ---
 
 <!DOCTYPE html>
@@ -24,7 +41,7 @@ const {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content={description}>
-    <meta name="keywords" content="web development agency Greater Noida, automation agency India, website for salon India, website for optical store India, no-code automation small business India">
+    <meta name="keywords" content={keywords}>
     <meta name="author" content="Noob{Dev} Technologies">
     <meta name="theme-color" content="#FF0000">
     <meta name="robots" content="index, follow">
@@ -47,13 +64,9 @@ const {
     
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     
-    <!-- Optimized Google Fonts Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&family=Poppins:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&family=Poppins:wght@700&display=swap" rel="stylesheet">
-    </noscript>
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="/_astro/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/_astro/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Delayed Google Tag Manager -->
     <script is:inline>
@@ -88,7 +101,7 @@ const {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Noob{Dev} Technologies",
-        "image": "https://noobdev.tech/og-image.jpg",
+        "image": "https://raw.githubusercontent.com/noobsoldev/NoobDev-Technologies-/main/Screenshot%202026-04-12%20050202.png",
         "@id": "https://noobdev.tech",
         "url": "https://noobdev.tech",
         "telephone": "+91-9810141789",
@@ -106,6 +119,14 @@ const {
           "latitude": 28.4744,
           "longitude": 77.5040
         },
+        "areaServed": [
+          "Noida",
+          "Greater Noida",
+          "Ghaziabad",
+          "Delhi NCR",
+          "Gurgaon",
+          "Faridabad"
+        ],
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
@@ -118,30 +139,54 @@ const {
           "opens": "09:00",
           "closes": "18:00"
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "124"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": "Rajesh Kumar",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+            },
+            "reviewBody": "Best automation agency in Noida. They saved us 20 hours a week!"
+          }
+        ],
         "sameAs": [
           "https://linkedin.com/company/noobdev",
           "https://twitter.com/noobdev"
         ]
       }
     </script>
-    <script type="application/ld+json" is:inline>
+    {faqs.length > 0 && (
+      <script type="application/ld+json" is:inline define:vars={{ faqs }}>
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }
+      </script>
+    )}
+    <script type="application/ld+json" is:inline define:vars={{ defaultBreadcrumbs }}>
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://noobdev.tech"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://noobdev.tech/services"
-          }
-        ]
+        "itemListElement": defaultBreadcrumbs.map((bc, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": bc.name,
+          "item": bc.item
+        }))
       }
     </script>
 </head>

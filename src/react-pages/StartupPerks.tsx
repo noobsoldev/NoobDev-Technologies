@@ -424,7 +424,7 @@ const PERKS: Perk[] = [
     id: 44,
     company: "Dropbox",
     program: "Dropbox for Startups",
-    value: "40–90% off",
+    value: "40-90% off",
     description: "Discounts on Dropbox Business, DocSend for secure pitch deck sharing, and Dropbox Sign for e-signatures and contract workflows.",
     link: "https://www.dropbox.com/startups",
     category: "Other Services"
@@ -463,7 +463,7 @@ export const StartupPerks = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Startup <BraceWrap>Perks</BraceWrap>: Free Credits for AI Automation</h1>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Free Credits & Discounts for Startups</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-6">
-            Discover over $1.5M in free cloud credits, AI API access, developer tools, and startup programs — all in one place. We've curated the best resources for founders to build their MVP and scale without burning through their initial capital.
+            Discover over $1.5M in free cloud credits, AI API access, developer tools, and startup programs - all in one place. We've curated the best resources for founders to build their MVP and scale without burning through their initial capital.
           </p>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10">
             From Google Cloud and AWS Activate to OpenAI and Anthropic credits, these programs are designed to give your startup the technical leverage it needs. At Noob{`{Dev}`} Technologies, we help our clients navigate these offerings to ensure they are using the right stack for their specific AI and automation needs.
@@ -547,15 +547,15 @@ export const StartupPerks = () => {
         )}
 
         {/* FAQ Section */}
-        <div className="mt-32 max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              <BraceWrap>FAQ</BraceWrap>: Common Questions
+        <div className="mt-32">
+          <div className="text-center mb-20">
+            <h2 className="mb-6">
+              Frequently Asked <BraceWrap>Questions</BraceWrap>
             </h2>
-            <p className="text-gray-600 font-mono uppercase tracking-widest text-sm">Everything you need to know about startup programs</p>
+            <p className="text-gray-500 font-mono uppercase tracking-[0.2em] text-[11px]">Everything you need to know about startup programs</p>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
             {[
               {
                 q: "How do I qualify for these startup credits?",
@@ -582,15 +582,20 @@ export const StartupPerks = () => {
                 a: "While we don't handle the application itself, we help our clients architect their products to meet the technical requirements of these programs and ensure the credits are utilized effectively without waste."
               }
             ].map((faq, idx) => (
-              <div key={idx} className="border-b border-gray-100 pb-6 group">
-                <h3 className="text-xl font-bold mb-3 group-hover:text-[#FF0000] transition-colors flex items-start">
-                  <span className="text-[#FF0000] mr-4 font-mono">0{idx + 1}.</span>
-                  {faq.q}
-                </h3>
-                <p className="text-gray-700 leading-relaxed pl-10">
+              <details key={idx} className="group border border-gray-100 bg-gray-50 rounded-2xl overflow-hidden transition-all duration-500 hover:border-[#FF0000]/30 hover:shadow-xl hover:shadow-red-500/5">
+                <summary className="flex items-center justify-between px-8 py-6 cursor-pointer list-none group">
+                  <span className="font-semibold text-gray-700 group-hover:text-black transition-colors text-[15px] md:text-base leading-snug flex items-start gap-4">
+                    <span className="text-[#FF0000] font-mono text-sm">0{idx + 1}.</span>
+                    {faq.q}
+                  </span>
+                  <span className="text-[#FF0000] transition-transform duration-500 group-open:rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </summary>
+                <div className="px-8 pb-8 text-gray-600 leading-relaxed text-sm pl-16">
                   {faq.a}
-                </p>
-              </div>
+                </div>
+              </details>
             ))}
           </div>
         </div>

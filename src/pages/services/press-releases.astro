@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Brace from '../../components/Brace.astro';
+
+const title = "Press Releases Services in Noida & Greater Noida | NoobDev";
+const description = "NoobDev offers premium Press Releases services in Noida and Greater Noida. Get your brand featured on 200+ major media outlets, build massive trust, and boost your SEO authority overnight.";
+const keywords = "Press Releases agency Noida, Press Releases Greater Noida, Press Releases India, affordable Press Releases Noida";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Press Releases",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Noob{Dev} Technologies",
+    "areaServed": ["Noida", "Greater Noida", "Delhi NCR", "India"]
+  },
+  "description": description
+};
+---
+<Layout title={title} description={description} keywords={keywords}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  {/* Hero Section */}
+  <section class="pt-32 pb-20 md:pt-40 md:pb-24 bg-white border-b border-gray-100">
+    <div class="container-custom text-center max-w-4xl mx-auto">
+      <div class="inline-block bg-gray-100 px-3 py-1 text-[10px] font-mono mb-6 border-l-2 border-[#FF0000] uppercase tracking-widest">
+        Core Service
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+        Professional PR Distribution for <Brace>Instant Authority</Brace>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+        Get your brand featured on 200+ major media outlets, build massive trust, and boost your SEO authority overnight.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="bg-black text-white px-8 py-4 font-bold text-sm hover:bg-[#FF0000] transition-all uppercase tracking-widest rounded-lg shadow-lg shadow-black/10">
+          Book a Call
+        </a>
+        <a href="#process" class="bg-gray-50 text-black border border-gray-200 px-8 py-4 font-bold text-sm hover:border-black transition-all uppercase tracking-widest rounded-lg">
+          View Process
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Problem Section */}
+  <section class="section-padding bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">The <Brace>Challenge</Brace></h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Building brand trust and high-quality backlinks organically takes years.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+            <span class="text-[#FF0000] font-bold text-xl">!</span>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Lack of Credibility</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">New brands struggle to prove their legitimacy to skeptical buyers.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+            <span class="text-[#FF0000] font-bold text-xl">!</span>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Weak SEO Profile</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Without high-authority backlinks, ranking on Google is nearly impossible.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center mb-6">
+            <span class="text-[#FF0000] font-bold text-xl">!</span>
+          </div>
+          <h3 class="text-lg font-bold mb-3">Invisible Milestones</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Your product launches and company news go unnoticed by the broader market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Solution Section */}
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">The <Brace>NoobDev</Brace> Solution</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          We write compelling, journalist-friendly press releases and distribute them across a premium network of news sites, including Yahoo Finance, Bloomberg, and regional affiliates.
+        </p>
+      </div>
+      
+      {/* Features */}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-[#FF0000] font-mono text-sm mt-1">01.</span>
+          <div>
+            <h4 class="font-bold text-black mb-2">Professional Copywriting</h4>
+            <p class="text-gray-600 text-sm">Engaging narratives crafted by experienced PR writers.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-[#FF0000] font-mono text-sm mt-1">02.</span>
+          <div>
+            <h4 class="font-bold text-black mb-2">Massive Distribution</h4>
+            <p class="text-gray-600 text-sm">Guaranteed placement on 200+ authoritative news websites.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-[#FF0000] font-mono text-sm mt-1">03.</span>
+          <div>
+            <h4 class="font-bold text-black mb-2">SEO Backlinks</h4>
+            <p class="text-gray-600 text-sm">High Domain Authority (DA) links pointing directly to your site.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+          <span class="text-[#FF0000] font-mono text-sm mt-1">04.</span>
+          <div>
+            <h4 class="font-bold text-black mb-2">As Seen On Badges</h4>
+            <p class="text-gray-600 text-sm">Leverage media logos on your website to instantly boost conversion rates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Process Section */}
+  <section id="process" class="section-padding bg-gray-50 border-y border-gray-100">
+    <div class="container-custom">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <Brace>Process</Brace></h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">A streamlined, transparent approach to taking your project from concept to launch.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-gray-200 -translate-y-1/2 z-0"></div>
+        {[
+          { step: "01", title: "Discovery", desc: "We analyze your business goals and current bottlenecks." },
+          { step: "02", title: "Strategy", desc: "Crafting a tailored plan and architecture for your needs." },
+          { step: "03", title: "Execution", desc: "Building and integrating the solution with precision." },
+          { step: "04", title: "Launch", desc: "Testing, deployment, and ongoing optimization." }
+        ].map(item => (
+          <div class="relative z-10 bg-white border border-gray-100 p-8 rounded-2xl shadow-sm hover:border-[#FF0000]/50 transition-colors">
+            <div class="text-[#FF0000] font-mono text-xl mb-4">{item.step}.</div>
+            <h3 class="text-black text-xl font-bold mb-3">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Results / Benefits */}
+  <section class="section-padding bg-white border-b border-gray-100">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-black mb-2"><Brace>200+</Brace></div>
+          <div class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Media Placements</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-black mb-2"><Brace>High</Brace></div>
+          <div class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">DA Backlinks</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-black mb-2"><Brace>Instant</Brace></div>
+          <div class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Credibility</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl md:text-5xl font-bold text-black mb-2"><Brace>Broad</Brace></div>
+          <div class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Reach</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section class="py-24 bg-gray-50 border-t border-gray-100 text-center">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's build something that <Brace>grows your business</Brace></h2>
+      <p class="text-xl text-gray-600 mb-10">Stop losing time and customers. Upgrade to a high-performance digital engine today.</p>
+      <a href="/contact" class="inline-block bg-[#FF0000] text-white px-10 py-5 font-bold text-sm hover:bg-black transition-all uppercase tracking-widest rounded-lg shadow-xl shadow-red-500/20">
+        Book a Strategy Call →
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -4,6 +4,10 @@ import Brace from '../components/Brace.astro';
 import Terminal from '../components/Terminal.astro';
 import CodeSnippet from '../components/CodeSnippet.astro';
 
+const title = "About NoobDev | Top Automation & Web Development Agency in Noida";
+const description = "Learn about NoobDev Technologies, a leading no-code automation and web development agency in Noida. We help businesses scale with AI workflows and fast websites.";
+const keywords = "about NoobDev, automation agency Noida, web development agency Greater Noida, no-code agency India";
+
 const values = [
   { title: 'Simplicity', desc: 'Complex technology, simple user experience. We hide the cables so you just see the results.' },
   { title: 'Results', desc: 'We measure success by your ROI. If you aren\'t saving hours every week, we haven\'t done our job.' },
@@ -11,7 +15,12 @@ const values = [
 ];
 ---
 
-<Layout title="About Us | Noob{Dev} Technologies">
+<Layout 
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumb={[{ name: "About Us", item: "https://noobdev.tech/about" }]}
+>
   <div class="page-transition pt-32 pb-20">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-20 text-center">
@@ -24,7 +33,7 @@ const values = [
           <h2 class="text-3xl font-bold mb-6">Our Story</h2>
           <div class="space-y-6 text-gray-700 leading-relaxed text-lg">
             <p>
-              We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noob{`{Dev}`} Technologies was built to democratize <a href="/services" class="text-[#FF0000] underline decoration-gray-300 hover:decoration-[#FF0000] transition-colors">high-end business automation</a> for companies of all sizes. Based in Greater Noida, we are a no-code automation agency dedicated to your growth.
+              We believe powerful automation shouldn't require a Computer Science degree. Founded in 2025, Noob{`{Dev}`} Technologies was built to democratize <a href="/services" class="text-[#FF0000] underline decoration-gray-300 hover:decoration-[#FF0000] transition-colors">high-end business automation</a> for companies of all sizes. We are a global no-code automation agency dedicated to your growth.
             </p>
             <p>
               The gap between what modern software can do and how businesses actually use it is massive. Most teams are stuck doing repetitive work that an AI could handle in seconds.

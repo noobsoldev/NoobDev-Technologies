@@ -39,7 +39,7 @@ export const Navbar = ({ currentPath = "/" }: { currentPath?: string }) => {
     { label: 'Services', value: '/services' },
     { label: 'Showcase', value: '/showcase' },
     { label: 'Blog', value: '/blog' },
-    { label: 'Startup Perks', value: '/perks' },
+    { label: 'Startup Perks', value: '/startup-perks' },
     { label: 'Contact', value: '/contact' },
   ];
 

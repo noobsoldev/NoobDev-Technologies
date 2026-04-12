@@ -103,13 +103,13 @@ export const Showcase = () => {
 
   return (
     <div className="pb-20">
-      <div className="flex flex-wrap justify-center gap-4 mb-16">
+      <div className="flex flex-wrap justify-center gap-6 mb-20">
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-3 font-mono text-sm border-b-2 transition-all ${
-                filter === cat ? 'border-[#FF0000] text-[#FF0000] font-bold' : 'border-transparent text-gray-600 hover:text-black'
+              className={`px-8 py-4 font-mono text-[11px] border-b-2 transition-all uppercase tracking-[0.2em] ${
+                filter === cat ? 'border-[#FF0000] text-[#FF0000] font-semibold' : 'border-transparent text-gray-400 hover:text-black'
               }`}
             >
               {filter === cat ? `{${cat}}` : cat}
@@ -117,16 +117,16 @@ export const Showcase = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project, idx) => (
-              <div key={project.id} className="group relative bg-white border border-gray-200 hover:border-black transition-all duration-500 overflow-hidden flex flex-col">
+              <div key={project.id} className="group relative bg-white border border-gray-100 hover:border-[#FF0000] transition-all duration-500 overflow-hidden flex flex-col hover:shadow-2xl hover:shadow-red-500/5">
                 {/* Browser Mockup Header */}
-                <div className="bg-gray-100 border-b border-gray-200 px-4 py-3 flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-                  <div className="ml-4 text-[10px] font-mono text-gray-500 truncate">
+                <div className="bg-gray-50 border-b border-gray-100 px-6 py-4 flex items-center space-x-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+                  <div className="ml-4 text-[10px] font-mono text-gray-400 truncate uppercase tracking-widest">
                     {project.link?.replace('https://', '').replace('/', '')}
                   </div>
                 </div>
@@ -134,40 +134,40 @@ export const Showcase = () => {
                 {/* Image Section */}
                 <button 
                   onClick={(e) => openLightbox(idx, e)}
-                  className="relative aspect-video overflow-hidden bg-gray-50 border-b border-gray-100 w-full block focus:outline-none focus:ring-2 focus:ring-[#FF0000]"
+                  className="relative aspect-video overflow-hidden bg-gray-50 border-b border-gray-100 w-full block focus:outline-none"
                   aria-label={`View larger image of ${project.title}`}
                 >
                   <ProjectImage 
                     src={project.image} 
                     alt={`${project.title} project showcase`} 
                     priority={idx < 2}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700" 
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-700" 
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 z-20 pointer-events-none"></div>
                 </button>
 
                 {/* Content Section */}
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex justify-between items-start mb-4">
+                <div className="p-10 flex flex-col flex-grow">
+                  <div className="flex justify-between items-start mb-6">
                     <div>
-                      <div className="text-xs font-mono text-[#FF0000] mb-2 uppercase tracking-widest">
+                      <div className="text-[10px] font-mono text-[#FF0000] mb-3 uppercase tracking-[0.2em] font-semibold">
                         [ {project.industry} // {project.category} ]
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#FF0000] transition-colors">
+                      <h3 className="group-hover:text-[#FF0000] transition-colors">
                         {project.title}
                       </h3>
                     </div>
                   </div>
                   
-                  <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                  <div className="mt-auto pt-8 border-t border-gray-100 flex items-center justify-between">
                     <div>
-                      <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider mb-1">Key Result</div>
-                      <div className="font-bold text-gray-900">{project.metric}</div>
+                      <div className="text-[10px] font-mono text-gray-400 uppercase tracking-widest mb-2">Key Result</div>
+                      <div className="font-semibold text-gray-900 text-lg">{project.metric}</div>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-4">
                       <Link 
-                        to={`/projects/${project.slug}`}
-                        className="bg-[#FF0000] text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-[#cc0000] transition-colors shadow-sm"
+                        to={`/showcase/${project.slug}`}
+                        className="bg-[#FF0000] text-white px-6 py-3 font-semibold text-xs hover:bg-black transition-all uppercase tracking-widest"
                       >
                         Read Case Study
                       </Link>
@@ -176,7 +176,7 @@ export const Showcase = () => {
                           href={project.link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black text-white hover:bg-[#FF0000] transition-colors shadow-md"
+                          className="inline-flex items-center justify-center w-10 h-10 bg-black text-white hover:bg-[#FF0000] transition-all shadow-lg shadow-black/10"
                           aria-label={`Visit ${project.title}`}
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,10 +190,10 @@ export const Showcase = () => {
               </div>
             ))
           ) : (
-            <div className="col-span-full py-20 text-center border-2 border-dashed border-gray-100">
-              <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-2xl font-bold mb-2">Projects Incoming</h3>
-              <p className="text-gray-500 font-mono">Real-world automation success stories are currently being uploaded. Check back soon!</p>
+            <div className="col-span-full py-32 text-center border border-dashed border-gray-200 bg-gray-50/50">
+              <div className="text-5xl mb-6">🚀</div>
+              <h3 className="mb-4">Projects Incoming</h3>
+              <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">Real-world automation success stories are currently being uploaded.</p>
             </div>
           )}
         </div>

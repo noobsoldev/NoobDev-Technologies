@@ -1,0 +1,56 @@
+---
+---
+
+<div class="bg-white p-8 border border-gray-200 shadow-xl rounded-2xl">
+  <h3 class="mb-6">Get a Free Quote</h3>
+  <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+    <div>
+      <label for="name" class="block text-sm font-mono text-gray-500 uppercase mb-2">Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required 
+        placeholder="John Doe"
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#FF0000] outline-none transition-colors"
+      />
+    </div>
+    <div>
+      <label for="phone" class="block text-sm font-mono text-gray-500 uppercase mb-2">Phone</label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required 
+        placeholder="+91 98101 41789"
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#FF0000] outline-none transition-colors"
+      />
+    </div>
+    <div>
+      <label for="business" class="block text-sm font-mono text-gray-500 uppercase mb-2">Business Type</label>
+      <select 
+        id="business" 
+        name="business" 
+        required 
+        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:border-[#FF0000] outline-none transition-colors"
+      >
+        <option value="">Select your business</option>
+        <option value="salon">Salon / Spa</option>
+        <option value="retail">Retail / Showroom</option>
+        <option value="healthcare">Healthcare / Clinic</option>
+        <option value="education">Coaching / Education</option>
+        <option value="startup">Tech Startup</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button 
+      type="submit" 
+      class="w-full bg-[#FF0000] text-white font-bold py-4 hover:bg-black transition-colors"
+    >
+      Request Consultation
+    </button>
+    <p class="text-[10px] text-gray-400 text-center mt-4">
+      By submitting, you agree to be contacted via WhatsApp/Phone.
+    </p>
+  </form>
+</div>

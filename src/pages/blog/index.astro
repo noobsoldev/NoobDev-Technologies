@@ -2,29 +2,34 @@
 import Layout from '../../layouts/Layout.astro';
 import Brace from '../../components/Brace.astro';
 import { Blog as BlogPage } from '../../react-pages/Blog';
+const title = "Blog | Web Development & Automation Insights | NoobDev Noida";
+const description = "Deep dives into business automation, no-code architecture, web development, and the future of work. Insights from NoobDev Technologies in Noida.";
+const keywords = "automation blog, web development blog Noida, no-code architecture, business automation insights Greater Noida";
 ---
 
 <Layout 
-  title="Blog | Noob{Dev} Technologies"
-  description="Deep dives into business automation, no-code architecture, and the future of work. Insights from Noob{Dev} Technologies."
+  title={title}
+  description={description}
+  keywords={keywords}
+  breadcrumb={[{ name: "Blog", item: "https://noobdev.tech/blog" }]}
 >
-  <div class="page-transition pt-32 pb-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+  <div class="page-transition section-padding bg-white">
+    <div class="container-custom">
       {/* Header Section */}
-      <div class="mb-16">
-        <div class="flex items-center gap-2 mb-4">
+      <div class="mb-24">
+        <div class="flex items-center gap-3 mb-6">
           <div class="h-px w-12 bg-[#FF0000]"></div>
-          <span class="font-mono text-xs text-[#FF0000] uppercase tracking-widest">The Terminal Blog</span>
+          <span class="font-mono text-[10px] text-[#FF0000] uppercase tracking-[0.2em] font-semibold">The Terminal Blog</span>
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        <h1 class="mb-8">
           <Brace>Insights</Brace> & Updates: No-Code Automation Studio Blog
         </h1>
-        <p class="text-xl text-gray-700 max-w-2xl leading-relaxed">
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
           Deep dives into business automation, no-code architecture, and the future of work.
         </p>
       </div>
 
-      <BlogPage client:load />
+      <BlogPage client:visible />
     </div>
   </div>
 </Layout>

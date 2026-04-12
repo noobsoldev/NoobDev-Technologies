@@ -1,14 +1,18 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  site: 'https://noobdev.tech',
+  output: 'static',
   integrations: [
-    react()
+    react(),
+    sitemap()
   ],
   server: {
     host: '0.0.0.0',

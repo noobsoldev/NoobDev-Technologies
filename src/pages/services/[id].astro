@@ -13,6 +13,13 @@ export function getStaticPaths() {
 const { service } = Astro.props;
 ---
 
-<Layout title={`${service.title} | Noob{Dev} Technologies`} description={service.description}>
-  <ServiceDetail client:load />
+<Layout 
+  title={`${service.title} | Noob{Dev} Technologies`} 
+  description={service.description}
+  breadcrumb={[
+    { name: "Services", item: "https://noobdev.tech/services" },
+    { name: service.title, item: `https://noobdev.tech/services/${service.id}` }
+  ]}
+>
+  <ServiceDetail client:visible />
 </Layout>
