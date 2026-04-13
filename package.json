@@ -4,37 +4,28 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "tsc --noEmit",
-    "start": "astro dev"
+    "start": "node server.js"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
-    "@fontsource/fira-code": "^5.2.7",
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/montserrat": "^5.2.8",
-    "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/typography": "^0.5.19",
     "express": "^4.18.2",
     "lucide-react": "^0.575.0",
-    "motion": "^12.38.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-markdown": "^10.1.0"
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
-    "@astrojs/react": "^5.0.3",
-    "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/vite": "^4.2.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "astro": "^6.1.5",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.3",
-    "puppeteer": "^24.40.0",
     "tailwindcss": "^4.0.7",
     "typescript": "^5.7.3",
     "vite": "^6.1.1"
