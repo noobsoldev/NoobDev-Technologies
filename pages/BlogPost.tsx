@@ -141,12 +141,12 @@ export const BlogPost = () => {
                   type="email" 
                   placeholder="your@email.com" 
                   aria-label="Email address for newsletter"
-                  className="flex-1 bg-gray-50 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#FF0000] transition-colors" 
+                  className="flex-1 bg-gray-50 border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#FF0000] transition-colors rounded-lg" 
                 />
                 <button 
                   type="submit"
                   disabled={newsletterState === 'submitting'}
-                  className="bg-[#FF0000] text-white px-6 py-3 text-sm font-bold hover:bg-black transition-all disabled:bg-gray-400"
+                  className="bg-[#FF0000] text-white px-6 py-3 text-sm font-bold hover:bg-black transition-all disabled:bg-gray-400 rounded-lg"
                 >
                   {newsletterState === 'submitting' ? 'Joining...' : 'Join Now'}
                 </button>

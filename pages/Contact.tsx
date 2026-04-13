@@ -57,7 +57,7 @@ export const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">
           {/* Contact Form */}
-          <div className="bg-white p-10 border border-gray-100 shadow-xl">
+          <div className="bg-white p-8 border border-gray-100 shadow-xl rounded-lg">
             {formState === 'success' ? (
               <div className="text-center py-20">
                 <div className="text-5xl mb-6">✓</div>
@@ -75,18 +75,18 @@ export const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Name *</label>
-                    <input required name="name" type="text" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000]" />
+                    <input required name="name" type="text" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] rounded-lg" />
                   </div>
                   <div>
                     <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Email *</label>
-                    <input required name="email" type="email" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000]" />
+                    <input required name="email" type="email" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] rounded-lg" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Phone</label>
-                    <div className="flex">
-                      <select name="countryCode" className="w-24 bg-gray-50 border border-gray-200 border-r-0 px-2 py-3 focus:outline-none focus:border-[#FF0000] appearance-none text-sm">
+                    <div className="flex gap-2">
+                      <select name="countryCode" className="w-24 bg-gray-50 border border-gray-200 px-2 py-3 focus:outline-none focus:border-[#FF0000] appearance-none text-sm rounded-lg">
                         <option value="+1">+1 (US)</option>
                         <option value="+44">+44 (UK)</option>
                         <option value="+91">+91 (IN)</option>
@@ -97,12 +97,12 @@ export const Contact = () => {
                         <option value="+86">+86 (CN)</option>
                         <option value="+971">+971 (UAE)</option>
                       </select>
-                      <input name="phone" type="tel" className="flex-1 w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000]" />
+                      <input name="phone" type="tel" className="flex-1 w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] rounded-lg" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Service Interest</label>
-                    <select name="service" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] appearance-none">
+                    <select name="service" className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] appearance-none rounded-lg">
                       <option>AI Automation</option>
                       <option>Custom Website</option>
                       <option>Landing Pages</option>
@@ -113,7 +113,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-gray-500 uppercase mb-2">Message *</label>
-                  <textarea required name="message" rows={4} className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] resize-none"></textarea>
+                  <textarea required name="message" rows={4} className="w-full bg-gray-50 border border-gray-200 px-4 py-3 focus:outline-none focus:border-[#FF0000] resize-none rounded-lg"></textarea>
                 </div>
                 
                 {formState === 'error' && (
@@ -124,7 +124,7 @@ export const Contact = () => {
 
                 <button 
                   disabled={formState === 'submitting'}
-                  className="w-full bg-[#FF0000] text-white py-4 font-bold text-lg hover:bg-black transition-all disabled:bg-gray-400"
+                  className="w-full bg-[#FF0000] text-white py-4 font-bold text-lg hover:bg-black transition-all disabled:bg-gray-400 rounded-lg"
                 >
                   {formState === 'submitting' ? 'Sending...' : '{Send Message} →'}
                 </button>

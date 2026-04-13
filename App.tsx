@@ -12,6 +12,7 @@ const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module
 const BlogPost = lazy(() => import('./pages/BlogPost').then(module => ({ default: module.BlogPost })));
 const StartupPerks = lazy(() => import('./pages/StartupPerks').then(module => ({ default: module.StartupPerks })));
 const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
+const Apply = lazy(() => import('./pages/Apply').then(module => ({ default: module.Apply })));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,6 +48,7 @@ const AppContent = () => {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/perks" element={<StartupPerks />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/apply" element={<Apply />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>

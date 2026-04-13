@@ -61,7 +61,7 @@ export const Home = () => {
         
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <div className="lg:w-1/2">
-            <div className="inline-block bg-gray-100 px-3 py-1 text-xs font-mono mb-6 border-l-2 border-[#FF0000]">
+            <div className="inline-block bg-gray-100 px-3 py-1 text-xs font-mono mb-6 border-l-2 border-[#FF0000] rounded-r-lg">
               $ npm install growth --save-dev
             </div>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
@@ -73,13 +73,13 @@ export const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 to="/contact"
-                className="bg-[#FF0000] text-white px-8 py-4 font-bold text-lg hover:bg-black transition-all flex items-center justify-center group"
+                className="bg-[#FF0000] text-white px-6 py-3 font-bold text-lg hover:bg-black transition-all flex items-center justify-center group rounded-lg"
               >
                 Start Automating <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </Link>
               <Link 
                 to="/services"
-                className="border-2 border-[#FF0000] text-black px-8 py-4 font-bold text-lg hover:bg-[#FF0000] hover:text-white transition-all flex items-center justify-center"
+                className="border-2 border-[#FF0000] text-black px-6 py-3 font-bold text-lg hover:bg-[#FF0000] hover:text-white transition-all flex items-center justify-center rounded-lg"
               >
                 See How It Works
               </Link>
@@ -109,7 +109,51 @@ studio.deploy({
         </div>
       </section>
 
-      {/* Trust Bar */}
+      {/* 100 Businesses Initiative Section */}
+      <section className="py-16 px-6 bg-black text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF0000] opacity-10 blur-[100px] -mr-32 -mt-32"></div>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12 bg-[#111] border border-gray-800 p-8 md:p-12 relative z-10 rounded-lg">
+            <div className="lg:w-2/3">
+              <div className="inline-flex items-center gap-2 bg-[#FF0000] text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-widest mb-6 rounded-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                Limited Initiative
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Helping <BraceWrap>100</BraceWrap> Local Businesses Grow Online
+              </h2>
+              <p className="text-gray-400 text-lg mb-8 max-w-2xl leading-relaxed">
+                We are onboarding 100 local businesses to build complete online systems that generate leads and automate growth. Not just a website, but a full business engine.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                {[
+                  "Website + automation setup",
+                  "Built for real results",
+                  "Limited slots remaining"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[#FF0000]/20 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-[#FF0000] rounded-full"></div>
+                    </div>
+                    <span className="text-sm font-mono text-gray-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:w-1/3 w-full flex justify-center lg:justify-end">
+              <Link 
+                to="/apply"
+                className="bg-[#FF0000] text-white px-8 py-4 font-bold text-xl hover:bg-white hover:text-black transition-all shadow-xl hover:shadow-[#FF0000]/20 w-full lg:w-auto text-center rounded-lg"
+              >
+                Apply Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-12 border-y border-gray-100 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-xs font-mono text-gray-500 mb-10 uppercase tracking-widest">Integrating your favorite tools</p>
@@ -177,7 +221,7 @@ studio.deploy({
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SERVICES.map((s, idx) => (
-                <div key={s.id} className={`bg-white p-8 border border-gray-100 hover:border-[#FF0000] hover:shadow-xl transition-all group ${idx >= 6 ? 'md:hidden lg:block' : ''}`}>
+                <div key={s.id} className={`bg-white p-6 border border-gray-100 hover:border-[#FF0000] hover:shadow-xl transition-all group rounded-lg ${idx >= 6 ? 'md:hidden lg:block' : ''}`}>
                   <div className="text-2xl font-mono text-[#FF0000] mb-6 group-hover:scale-110 transition-transform origin-left">{s.icon}</div>
                   <h3 className="text-xl font-bold mb-3">{s.title}</h3>
                   <p className="text-gray-700 text-sm mb-6 leading-relaxed">{s.description}</p>
@@ -208,8 +252,8 @@ studio.deploy({
                 { title: 'Build', step: '02', desc: 'We design and deploy your custom no-code automation systems.' },
                 { title: 'Launch', step: '03', desc: 'You save hours every day as your business runs on autopilot.' },
               ].map((item, idx) => (
-                <div key={idx} className="bg-white border border-gray-100 p-8 text-center relative hover:translate-y-[-8px] transition-transform duration-300">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF0000] text-white font-mono px-3 py-1 text-xs">
+                <div key={idx} className="bg-white border border-gray-100 p-8 text-center relative hover:translate-y-[-8px] transition-transform duration-300 rounded-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF0000] text-white font-mono px-3 py-1 text-xs rounded-sm">
                     STEP {item.step}
                   </div>
                   <h3 className="text-2xl font-bold mb-4 mt-4">
@@ -234,7 +278,7 @@ studio.deploy({
               { name: 'Marcus Bell', role: 'Founder, RetailScale', text: "The ROI was immediate. Their AI automation handles our inventory updates perfectly." },
               { name: 'Elena Rodriguez', role: 'Director, MediaForge', text: "Cleanest integration we've ever seen. No more manual data entry between our CRM and Notion." },
             ].map((t, idx) => (
-              <div key={idx} className="bg-[#111] p-10 border border-gray-800 relative">
+              <div key={idx} className="bg-[#111] p-8 border border-gray-800 relative rounded-lg">
                 <div className="text-4xl text-[#FF0000] font-mono mb-6 leading-none">"</div>
                 <p className="text-gray-500 mb-8 italic leading-relaxed">{t.text}</p>
                 <div>
@@ -274,12 +318,12 @@ studio.deploy({
                 type="email" 
                 placeholder="your@email.com" 
                 aria-label="Email address for newsletter"
-                className="flex-1 bg-gray-50 border border-gray-200 px-6 py-4 focus:outline-none focus:border-[#FF0000] transition-colors" 
+                className="flex-1 bg-gray-50 border border-gray-200 px-6 py-3 focus:outline-none focus:border-[#FF0000] transition-colors rounded-lg" 
               />
               <button 
                 type="submit"
                 disabled={newsletterState === 'submitting'}
-                className="bg-[#FF0000] text-white px-8 py-4 font-bold hover:bg-black transition-all disabled:bg-gray-400"
+                className="bg-[#FF0000] text-white px-8 py-3 font-bold hover:bg-black transition-all disabled:bg-gray-400 rounded-lg"
               >
                 {newsletterState === 'submitting' ? 'Joining...' : 'Join Now'}
               </button>

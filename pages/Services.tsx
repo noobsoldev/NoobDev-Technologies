@@ -28,7 +28,7 @@ export const Services = () => {
             <a 
               key={s.id}
               href={`#service-${s.id}`} 
-              className="bg-white p-8 border border-gray-100 hover:border-[#FF0000] transition-all group"
+              className="bg-white p-6 border border-gray-100 hover:border-[#FF0000] transition-all group rounded-lg"
             >
               <div className="text-2xl font-mono text-[#FF0000] mb-4">{s.icon}</div>
               <h3 className="text-lg font-bold mb-2">{s.title}</h3>
@@ -80,7 +80,7 @@ export const Services = () => {
 
                 <Link 
                   to="/contact"
-                  className="mt-10 inline-block bg-black text-white px-8 py-4 font-bold hover:bg-[#FF0000] transition-colors"
+                  className="mt-10 inline-block bg-black text-white px-6 py-3 font-bold hover:bg-[#FF0000] transition-colors rounded-lg"
                 >
                   Start Your {s.title} →
                 </Link>

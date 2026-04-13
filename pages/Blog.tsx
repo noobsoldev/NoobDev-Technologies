@@ -69,7 +69,7 @@ export const Blog = () => {
           <div className="mb-24">
             <div className="group relative">
               <div className="absolute -inset-1 bg-[#FF0000] opacity-5 group-hover:opacity-10 transition-opacity"></div>
-              <div className="relative bg-white border border-gray-100 flex flex-col lg:flex-row items-stretch overflow-hidden">
+              <div className="relative bg-white border border-gray-100 flex flex-col lg:flex-row items-stretch overflow-hidden rounded-lg">
                 <div className="lg:w-1/2 h-80 lg:h-auto overflow-hidden">
                   <img 
                     src={featuredPost.image} 
@@ -77,7 +77,7 @@ export const Blog = () => {
                     width="600"
                     height="400"
                     loading="eager"
-                    fetchpriority="high"
+                    fetchPriority="high"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                 </div>
@@ -111,7 +111,7 @@ export const Blog = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-sm font-mono px-4 py-2 transition-all ${
+              className={`text-sm font-mono px-4 py-2 transition-all rounded-lg ${
                 activeCategory === cat 
                 ? 'bg-black text-white' 
                 : 'text-gray-500 hover:text-black hover:bg-gray-100'
@@ -126,7 +126,7 @@ export const Blog = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {regularPosts.map((post, idx) => (
             <article key={post.id} className="flex flex-col group">
-              <div className="relative h-60 mb-8 overflow-hidden bg-gray-100">
+              <div className="relative h-60 mb-8 overflow-hidden bg-gray-100 rounded-lg">
                 <img 
                   src={post.image} 
                   alt={`${post.title} blog post`} 
@@ -136,7 +136,7 @@ export const Blog = () => {
                   decoding="async"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
                 />
-                <div className="absolute bottom-0 left-0 bg-white px-4 py-2 font-mono text-[10px] font-bold text-[#FF0000] border-t border-r border-gray-100">
+                <div className="absolute bottom-0 left-0 bg-white px-4 py-2 font-mono text-[10px] font-bold text-[#FF0000] border-t border-r border-gray-100 rounded-tr-lg">
                   {post.category.toUpperCase()}
                 </div>
               </div>
